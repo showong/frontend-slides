@@ -146,6 +146,47 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 9 — CLOSING
+   ============================================================ */
+.s9 { background:var(--bg-deep); }
+
+.s9-quote {
+  font-size:clamp(0.82rem,1.7vw,1.1rem); color:var(--light);
+  line-height:1.85; max-width:72ch; margin-bottom:var(--gap);
+}
+.s9-quote strong { color:var(--coral); }
+
+.s9-divider { width:2.5rem; height:2px; background:var(--divider); margin-bottom:var(--gap); }
+
+.s9-q-label {
+  font-size:var(--small-size); color:var(--muted);
+  font-weight:700; letter-spacing:0.1em; margin-bottom:var(--egap);
+}
+.s9-options {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:clamp(0.4rem,1vw,0.7rem);
+}
+@media(max-width:500px){ .s9-options{ grid-template-columns:1fr; } }
+
+.s9-opt {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:8px; padding:clamp(0.55rem,1.4vw,0.9rem) clamp(0.75rem,2vw,1.15rem);
+  font-size:clamp(0.68rem,1.3vw,0.88rem); color:var(--light);
+  display:flex; align-items:center; gap:0.55em;
+  cursor:pointer; transition:all 0.25s ease; user-select:none;
+}
+.s9-opt:hover { border-color:var(--coral); color:var(--white); background:rgba(255,107,53,0.06); }
+.s9-opt-icon { font-size:1.15em; flex-shrink:0; }
+
+.s9-brand {
+  display:flex; align-items:center; gap:0.6rem;
+  margin-top:var(--gap); padding-top:var(--egap);
+  border-top:1px solid var(--divider);
+  font-size:var(--small-size); color:var(--muted);
+}
+.s9-brand-accent { color:var(--coral); font-weight:700; }
+
+/* ============================================================
    SLIDE 8 — IF I WERE AN INTERVIEWER
    ============================================================ */
 .s8 { background:var(--bg-navy); }
@@ -513,6 +554,52 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 9 — CLOSING
+     ============================================================ -->
+<section class="slide s9" id="slide-9">
+  <div class="bg-grid"></div>
+  <div class="glow glow-coral" style="width:40vw;height:40vw;bottom:-8%;left:-5%;opacity:0.5;"></div>
+  <div class="glow glow-teal"  style="width:32vw;height:32vw;top:-5%;right:-5%;opacity:0.4;"></div>
+
+  <div class="slide-content">
+    <div class="section-label reveal">마무리</div>
+    <h2 style="font-family:var(--fd);font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
+      가능성을 현실로 만드는 금융, 그리고 사람
+    </h2>
+
+    <p class="s9-quote reveal">
+      "좋은 아이디어가 세상에 나오기 위해서는 시작할 기회가 필요하고,
+      성장하기 위해서는 <strong>자금과 신뢰</strong>가 필요하며,
+      오래 살아남기 위해서는 <strong>위험을 관리할 장치</strong>가 필요합니다.
+      신보는 그 가능성을 현실로 연결하는 역할을 합니다.
+      그리고 그 일을 잘하는 사람은 결국
+      <strong>사람과 숫자를 함께 보고, 책임 있게 문제를 끝까지 다루는 사람</strong>입니다."
+    </p>
+
+    <div class="s9-divider reveal"></div>
+
+    <div class="reveal">
+      <div class="s9-q-label">마지막 질문 — 오늘 이야기 중 가장 인상 깊었던 것은?</div>
+      <div class="s9-options">
+        <div class="s9-opt"><span class="s9-opt-icon">🌱</span>회사를 키우는 금융</div>
+        <div class="s9-opt"><span class="s9-opt-icon">🛡️</span>거래를 지키는 금융</div>
+        <div class="s9-opt"><span class="s9-opt-icon">🔄</span>다시 일어설 기회를 만드는 금융</div>
+        <div class="s9-opt"><span class="s9-opt-icon">💪</span>오래 가는 사람의 태도</div>
+      </div>
+    </div>
+
+    <div class="s9-brand reveal">
+      <span class="s9-brand-accent">신용보증기금</span>
+      <span>·</span>
+      <span>금융이지 특강</span>
+      <span>·</span>
+      <span>2026</span>
+    </div>
+  </div>
+  <span class="slide-num">09 / 09</span>
 </section>
 
 <!-- ============================================================
