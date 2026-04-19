@@ -422,43 +422,109 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 .s4-keymsg-text em { color:var(--coral); font-style:normal; }
 
 /* ============================================================
-   SLIDE 3 — INTRO / POLICY FINANCE
+   SLIDE 3 — INTRO / POLICY FINANCE (interactive flip cards)
    ============================================================ */
 .s3 { background:var(--bg-deep); }
 
+.s3-hint {
+  font-size:var(--small-size); color:var(--muted);
+  margin-bottom:var(--egap); display:flex; align-items:center; gap:0.4em;
+}
+
 .s3-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:clamp(0.64rem,1.5vw,1rem);
+  gap:clamp(0.8rem,2vw,1.2rem); flex:1;
 }
 @media(max-width:680px){ .s3-grid{ grid-template-columns:1fr; } }
 
-.s3-box {
+/* 카드 컨테이너 */
+.s3-card {
   background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:12px; padding:clamp(0.9rem,2vw,1.5rem);
-  display:flex; flex-direction:column; gap:0.5em;
+  border-radius:14px; cursor:pointer;
+  transition:border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  overflow:hidden; position:relative;
+  min-height:clamp(7rem,14vh,11rem);
+  display:flex; flex-direction:column;
 }
-.s3-box-coral { border-top:3px solid var(--coral); }
-.s3-box-teal  { border-top:3px solid var(--teal); }
+.s3-card:hover {
+  border-color:rgba(255,107,53,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3);
+}
+.s3-card.open {
+  border-color:rgba(255,107,53,0.5);
+  box-shadow:0 8px 32px rgba(255,107,53,0.12);
+}
 
-.s3-box-label {
-  font-size:var(--small-size); font-weight:700;
-  letter-spacing:0.1em; text-transform:uppercase;
+/* 색상 상단 바 */
+.s3-card .bar {
+  height:3px; width:100%; flex-shrink:0;
 }
-.s3-box-label.c { color:var(--coral); }
-.s3-box-label.t { color:var(--teal); }
+.s3-card.coral .bar { background:var(--coral); }
+.s3-card.teal  .bar { background:var(--teal); }
+.s3-card.gold  .bar { background:var(--gold); }
+.s3-card.blue  .bar { background:#60A5FA; }
 
-.s3-box-text {
-  font-size:clamp(0.82rem,1.4vw,0.97rem);
-  color:var(--light); line-height:1.7;
+/* 닫힌 상태: 아이콘 + 제목만 표시 */
+.s3-face {
+  flex:1; display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start;
+  padding:clamp(1rem,2.5vw,1.8rem);
+  gap:0.5em;
 }
-.s3-box-text strong { color:var(--white); }
+.s3-face-icon { font-size:clamp(1.4rem,2.5vw,2rem); }
+.s3-face-title {
+  font-size:clamp(0.95rem,2vw,1.25rem); font-weight:700; color:var(--white);
+  line-height:1.3;
+}
+.s3-face-sub {
+  font-size:var(--small-size); color:var(--muted);
+  display:flex; align-items:center; gap:0.3em;
+}
+.s3-face-sub::after { content:'›'; color:var(--coral); font-size:1.2em; }
 
-.s3-goals { list-style:none; display:flex; flex-direction:column; gap:0.45em; }
-.s3-goals li {
-  font-size:clamp(0.82rem,1.4vw,0.97rem); color:var(--light);
-  display:flex; align-items:flex-start; gap:0.5em; line-height:1.5;
+/* 열린 상태: 설명 오버레이 */
+.s3-back {
+  position:absolute; inset:0;
+  background:var(--bg-card);
+  padding:clamp(0.9rem,2vw,1.4rem);
+  display:flex; flex-direction:column; justify-content:center; gap:0.6em;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.3s ease;
+  border-radius:14px;
 }
-.s3-goals li::before { content:'▶'; color:var(--teal); font-size:0.65em; margin-top:0.3em; flex-shrink:0; }
+.s3-card.open .s3-back  { opacity:1; pointer-events:auto; }
+.s3-card.open .s3-face  { opacity:0; pointer-events:none; }
+.s3-face { transition:opacity 0.2s; }
+
+.s3-back-title {
+  font-size:var(--small-size); font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.s3-card.coral .s3-back-title { color:var(--coral); }
+.s3-card.teal  .s3-back-title { color:var(--teal); }
+.s3-card.gold  .s3-back-title { color:var(--gold); }
+.s3-card.blue  .s3-back-title { color:#60A5FA; }
+
+.s3-back-text {
+  font-size:clamp(0.82rem,1.5vw,1rem); color:var(--light); line-height:1.65;
+}
+.s3-back-text strong { color:var(--white); }
+.s3-back-text li {
+  display:flex; align-items:flex-start; gap:0.45em;
+  font-size:clamp(0.82rem,1.4vw,0.97rem); color:var(--light); line-height:1.5;
+  list-style:none; margin-bottom:0.3em;
+}
+.s3-back-text li::before { content:'▶'; font-size:0.6em; margin-top:0.35em; flex-shrink:0; }
+.s3-card.coral .s3-back-text li::before { color:var(--coral); }
+.s3-card.teal  .s3-back-text li::before { color:var(--teal); }
+.s3-card.gold  .s3-back-text li::before { color:var(--gold); }
+.s3-card.blue  .s3-back-text li::before { color:#60A5FA; }
+
+.s3-close-hint {
+  font-size:clamp(0.62rem,1vw,0.75rem); color:var(--muted);
+  margin-top:auto; align-self:flex-end;
+}
 
 /* ============================================================
    SLIDE 2 — OPENING QUESTIONS
@@ -612,44 +678,86 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 
   <div class="slide-content">
     <div class="section-label reveal">정책금융 · 신용보증기금 소개</div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
+    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--egap);" class="reveal">
       오늘 이 이야기를 하는 이유
     </h2>
+    <p class="s3-hint reveal">💡 카드를 클릭하면 내용이 펼쳐집니다</p>
 
-    <div class="s3-grid">
-      <div class="s3-box s3-box-coral reveal">
-        <div class="s3-box-label c">정책금융이란?</div>
-        <p class="s3-box-text">
-          가능성은 있지만 아직 <strong>자금이나 신뢰가 부족</strong>해서 출발하기 어려운 기업들이 있습니다.
-          이런 기업들이 <strong>시작하고, 성장하고, 위기를 넘길 수 있도록</strong> 돕는 장치가 정책금융입니다.
-        </p>
+    <div class="s3-grid reveal">
+
+      <!-- 카드 1: 정책금융 -->
+      <div class="s3-card coral">
+        <div class="bar"></div>
+        <div class="s3-face">
+          <div class="s3-face-icon">🏦</div>
+          <div class="s3-face-title">정책금융이란?</div>
+          <div class="s3-face-sub">클릭해서 알아보기</div>
+        </div>
+        <div class="s3-back">
+          <div class="s3-back-title">정책금융이란?</div>
+          <p class="s3-back-text">
+            가능성은 있지만 <strong>자금·신뢰가 부족</strong>한 기업을 위한 장치.<br>
+            시작 · 성장 · 위기 극복까지 <strong>출발선을 만들어주는 금융</strong>입니다.
+          </p>
+          <span class="s3-close-hint">다시 클릭해 닫기</span>
+        </div>
       </div>
 
-      <div class="s3-box s3-box-teal reveal">
-        <div class="s3-box-label t">신용보증기금의 역할</div>
-        <p class="s3-box-text">
-          기업이 <strong>시작하고, 성장하고, 거래를 지키고, 다시 일어설 수 있도록</strong>
-          여러 방식으로 연결하는 역할을 합니다.
-        </p>
+      <!-- 카드 2: 신보 역할 -->
+      <div class="s3-card teal">
+        <div class="bar"></div>
+        <div class="s3-face">
+          <div class="s3-face-icon">🔗</div>
+          <div class="s3-face-title">신용보증기금의 역할</div>
+          <div class="s3-face-sub">클릭해서 알아보기</div>
+        </div>
+        <div class="s3-back">
+          <div class="s3-back-title">신용보증기금의 역할</div>
+          <p class="s3-back-text">
+            기업의 <strong>시작 → 성장 → 거래 → 재기</strong>,<br>
+            전 과정을 금융으로 <strong>연결</strong>합니다.
+          </p>
+          <span class="s3-close-hint">다시 클릭해 닫기</span>
+        </div>
       </div>
 
-      <div class="s3-box reveal">
-        <div class="s3-box-label c">강사 소개</div>
-        <p class="s3-box-text">
-          신용보증기금에서 <strong>13년간</strong> 일하며 다양한 기업을 현장에서 만나왔습니다.
-          창업 초기 기업이 어떻게 시작하는지, 성장 과정의 자금 필요성,
-          거래처 문제가 주는 영향까지 실제로 봐왔습니다.
-        </p>
+      <!-- 카드 3: 강사 소개 -->
+      <div class="s3-card gold">
+        <div class="bar"></div>
+        <div class="s3-face">
+          <div class="s3-face-icon">👤</div>
+          <div class="s3-face-title">강사 소개</div>
+          <div class="s3-face-sub">클릭해서 알아보기</div>
+        </div>
+        <div class="s3-back">
+          <div class="s3-back-title">강사 소개</div>
+          <p class="s3-back-text">
+            신보 <strong>13년 현장</strong> — 창업·성장·위기·재기를<br>
+            직접 옆에서 지켜본 사람이 전하는 이야기입니다.
+          </p>
+          <span class="s3-close-hint">다시 클릭해 닫기</span>
+        </div>
       </div>
 
-      <div class="s3-box reveal">
-        <div class="s3-box-label t">오늘 얻어갈 것</div>
-        <ul class="s3-goals">
-          <li>정책금융이 왜 필요한지 이해</li>
-          <li>신보가 기업의 시작·성장·위기·재기 과정에서 어떻게 돕는지 이해</li>
-          <li>그 안에서 일하는 사람의 특징과 학생 때부터 준비할 태도</li>
-        </ul>
+      <!-- 카드 4: 오늘 목표 -->
+      <div class="s3-card blue">
+        <div class="bar"></div>
+        <div class="s3-face">
+          <div class="s3-face-icon">🎯</div>
+          <div class="s3-face-title">오늘 얻어갈 것</div>
+          <div class="s3-face-sub">클릭해서 알아보기</div>
+        </div>
+        <div class="s3-back">
+          <div class="s3-back-title">오늘 얻어갈 것</div>
+          <ul class="s3-back-text">
+            <li>정책금융이 <strong>왜</strong> 필요한지</li>
+            <li>신보가 기업 성장 전 과정에서 <strong>어떻게</strong> 돕는지</li>
+            <li>그 일을 잘하는 <strong>사람의 태도</strong></li>
+          </ul>
+          <span class="s3-close-hint">다시 클릭해 닫기</span>
+        </div>
       </div>
+
     </div>
   </div>
   <span class="slide-num">03 / 09</span>
@@ -1124,6 +1232,15 @@ class SlidePresentation {
   }
 }
 new SlidePresentation();
+
+// Slide 3 interactive cards
+document.querySelectorAll('.s3-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.s3-card').forEach(c => c.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
