@@ -146,6 +146,42 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 5 — GROWTH & TRADE RISK
+   ============================================================ */
+.s5 { background:var(--bg-deep); }
+
+.s5-cols { display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); }
+@media(max-width:680px){ .s5-cols{ grid-template-columns:1fr; } }
+
+.s5-panel {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:12px; padding:clamp(0.9rem,2vw,1.5rem);
+  display:flex; flex-direction:column; gap:0.6em;
+}
+.s5-panel-icon { font-size:clamp(1.4rem,2.5vw,1.8rem); }
+.s5-panel-title { font-size:clamp(0.9rem,2vw,1.2rem); font-weight:700; color:var(--white); }
+
+.s5-items { list-style:none; display:flex; flex-direction:column; gap:0.35em; }
+.s5-items li {
+  font-size:clamp(0.68rem,1.3vw,0.92rem); color:var(--light);
+  display:flex; align-items:flex-start; gap:0.45em; line-height:1.5;
+}
+.s5-items li::before { content:'·'; color:var(--coral); font-size:1.4em; line-height:0.85; flex-shrink:0; }
+
+.s5-divider { width:100%; height:1px; background:var(--divider); }
+
+.s5-note {
+  font-size:clamp(0.62rem,1.1vw,0.82rem); color:var(--muted); line-height:1.6;
+}
+.s5-note strong { color:var(--light); }
+
+.s5-key {
+  font-size:clamp(0.72rem,1.4vw,0.95rem); color:var(--coral);
+  font-weight:700; font-style:italic; line-height:1.45;
+  margin-top:auto; padding-top:0.4em;
+}
+
+/* ============================================================
    SLIDE 4 — GREENPACK: STARTUP STAGE
    ============================================================ */
 .s4 { background:var(--bg-navy); }
@@ -328,6 +364,66 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 5 — GROWTH & TRADE RISK
+     ============================================================ -->
+<section class="slide s5" id="slide-5">
+  <div class="bg-grid"></div>
+  <div class="glow glow-coral" style="width:36vw;height:36vw;top:15%;left:-5%;opacity:0.5;"></div>
+
+  <div class="slide-content">
+    <div class="s4-tags reveal">
+      <span class="tag tag-teal">🌿 그린팩</span>
+      <span class="tag tag-coral">성장 · 거래처 리스크</span>
+    </div>
+
+    <h2 style="font-family:var(--fd);font-size:clamp(1.1rem,3vw,2rem);margin-bottom:var(--gap);" class="reveal">
+      잘될수록 더 필요해지는 금융
+    </h2>
+
+    <div class="s5-cols">
+      <!-- 성장 단계 -->
+      <div class="s5-panel reveal">
+        <div class="s5-panel-icon">📈</div>
+        <div class="s5-panel-title">성장 단계</div>
+        <ul class="s5-items">
+          <li>첫 거래처 확보, 주문 증가</li>
+          <li>생산설비 투자 필요</li>
+          <li>성장은 자동으로 현금을 가져오지 않음</li>
+          <li>설비·인력·원재료가 먼저 필요</li>
+        </ul>
+        <div class="s5-divider"></div>
+        <p class="s5-note">
+          <strong>신보 보증 절차:</strong><br>
+          보증신청·상담 → 자료수집·신용조사 → 보증심사·승인 → 보증서 발급<br>
+          <em style="color:var(--muted);">(신규기업은 영업점 방문상담이 기본)</em>
+        </p>
+        <div class="s5-key">"회사는 망할 때만 돈이 필요한 게 아니라,<br>잘될 때도 자금이 필요하다."</div>
+      </div>
+
+      <!-- 거래처 리스크 -->
+      <div class="s5-panel reveal">
+        <div class="s5-panel-icon">⚠️</div>
+        <div class="s5-panel-title">거래처 리스크</div>
+        <ul class="s5-items">
+          <li>외상매출 증가, 거래처 확대</li>
+          <li>주요 거래처 부실 위험</li>
+          <li>매출과 현금은 다르다</li>
+          <li>'잘 파는 것'과 '안전하게 받는 것'은 별개</li>
+        </ul>
+        <div class="s5-divider"></div>
+        <p class="s5-note">
+          <strong>매출채권보험:</strong><br>
+          판매기업이 취득한 매출채권에 대해 구매기업의
+          <em style="color:var(--muted);">지급불능·채무불이행</em> 발생 시 손실을 보전하는 제도
+        </p>
+        <div class="s5-key">"회사는 제품만 잘 만들어서 사는 게 아니라,<br>돈을 안전하게 받는 구조도 중요하다."</div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">05 / 09</span>
 </section>
 
 <!-- ============================================================
