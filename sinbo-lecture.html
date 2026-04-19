@@ -146,6 +146,58 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 6 — RECOVERY STAGE
+   ============================================================ */
+.s6 { background:var(--bg-navy); }
+
+.s6-layout { display:grid; grid-template-columns:1fr 2fr; gap:var(--gap); align-items:center; }
+@media(max-width:700px){ .s6-layout{ grid-template-columns:1fr; } }
+
+/* 왼쪽: 사이클 시각화 */
+.s6-cycle { display:flex; flex-direction:column; gap:0.3rem; }
+.s6-step {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:8px; padding:0.55em 1em;
+  font-size:clamp(0.68rem,1.3vw,0.9rem); color:var(--light);
+  display:flex; align-items:center; gap:0.5em;
+}
+.s6-step.active {
+  border-color:rgba(255,107,53,0.45);
+  background:rgba(255,107,53,0.1); color:var(--coral); font-weight:700;
+}
+.s6-arrow { text-align:center; color:var(--muted); font-size:0.75rem; margin:0.05rem 0; }
+
+/* 오른쪽: 카드들 */
+.s6-right { display:flex; flex-direction:column; gap:var(--egap); }
+
+.s6-card {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:10px; padding:clamp(0.7rem,1.8vw,1.2rem);
+}
+.s6-card-label { font-size:var(--small-size); color:var(--muted); font-weight:700; margin-bottom:0.4em; }
+.s6-card-text  { font-size:clamp(0.7rem,1.35vw,0.95rem); color:var(--light); line-height:1.65; }
+.s6-card-text strong { color:var(--white); }
+.s6-card-text .tl { color:var(--teal); font-weight:700; }
+
+.s6-quote {
+  background:linear-gradient(135deg,rgba(78,205,196,0.07),rgba(255,107,53,0.05));
+  border-left:3px solid var(--teal); border-radius:0 10px 10px 0;
+  padding:clamp(0.7rem,1.8vw,1.1rem);
+  font-size:clamp(0.78rem,1.5vw,1rem); color:var(--white);
+  font-weight:600; line-height:1.6;
+}
+.s6-quote em { color:var(--teal); font-style:normal; }
+
+.s6-summary {
+  background:linear-gradient(135deg,rgba(255,107,53,0.09),rgba(78,205,196,0.09));
+  border:1px solid rgba(255,107,53,0.2); border-radius:10px;
+  padding:clamp(0.7rem,1.8vw,1.1rem);
+  font-size:clamp(0.72rem,1.4vw,0.97rem); color:var(--light);
+  font-weight:500; line-height:1.6; text-align:center;
+}
+.s6-summary strong { color:var(--coral); }
+
+/* ============================================================
    SLIDE 5 — GROWTH & TRADE RISK
    ============================================================ */
 .s5 { background:var(--bg-deep); }
@@ -364,6 +416,68 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 6 — RECOVERY STAGE
+     ============================================================ -->
+<section class="slide s6" id="slide-6">
+  <div class="bg-grid"></div>
+  <div class="glow glow-teal" style="width:36vw;height:36vw;bottom:-8%;left:-5%;opacity:0.6;"></div>
+
+  <div class="slide-content">
+    <div class="s4-tags reveal">
+      <span class="tag tag-teal">🌿 그린팩</span>
+      <span class="tag tag-coral">재기 단계</span>
+    </div>
+    <h2 style="font-family:var(--fd);font-size:clamp(1.1rem,3vw,2rem);margin-bottom:var(--gap);" class="reveal">
+      그린팩이 다시 일어서려면
+    </h2>
+
+    <div class="s6-layout">
+      <!-- 사이클 -->
+      <div class="s6-cycle reveal">
+        <div class="s6-step">🌱 시작</div>
+        <div class="s6-arrow">↓</div>
+        <div class="s6-step">📈 성장</div>
+        <div class="s6-arrow">↓</div>
+        <div class="s6-step">⚠️ 위기</div>
+        <div class="s6-arrow">↓</div>
+        <div class="s6-step active">🔄 재기 ← 신보</div>
+      </div>
+
+      <!-- 내용 카드 -->
+      <div class="s6-right">
+        <div class="s6-card reveal">
+          <div class="s6-card-label">📍 상황</div>
+          <p class="s6-card-text">
+            경기 악화나 거래처 문제로 회사가 흔들림.
+            <strong>구조조정, 회복, 재창업</strong>의 갈림길.
+          </p>
+        </div>
+
+        <div class="s6-card reveal">
+          <div class="s6-card-label">🏢 재기지원단</div>
+          <p class="s6-card-text">
+            신보 영업조직에는 <span class="tl">재기지원단</span>이 포함되어 있으며,
+            실패를 끝으로 보지 않고 <strong>회복 가능성을 연결</strong>하는 역할을 합니다.<br>
+            <small style="color:var(--muted);">9영업본부 · 110영업점 · 15재기지원단 · 11채권관리단</small>
+          </p>
+        </div>
+
+        <div class="s6-quote reveal">
+          "한 번 흔들렸다고 끝이 아니라,<br>
+          <em>다시 일어설 기회를 연결</em>하는 역할도 있다."
+        </div>
+
+        <div class="s6-summary reveal">
+          신보는 한 회사를 <strong>태어나게</strong> 하고, <strong>키우고</strong>,
+          <strong>지키고</strong>, <strong>다시 일어설 수 있게</strong> 돕는 금융입니다.
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">06 / 09</span>
 </section>
 
 <!-- ============================================================
