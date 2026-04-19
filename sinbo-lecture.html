@@ -146,6 +146,56 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 4 — GREENPACK: STARTUP STAGE
+   ============================================================ */
+.s4 { background:var(--bg-navy); }
+
+.s4-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:var(--gap); }
+.tag {
+  font-size:var(--small-size); font-weight:700;
+  padding:0.3em 0.85em; border-radius:4px;
+}
+.tag-teal { background:rgba(78,205,196,0.15); border:1px solid rgba(78,205,196,0.3); color:var(--teal); }
+.tag-coral { background:rgba(255,107,53,0.15); border:1px solid rgba(255,107,53,0.3); color:var(--coral); }
+
+.s4-cols { display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); }
+@media(max-width:680px){ .s4-cols{ grid-template-columns:1fr; } }
+
+.s4-col { display:flex; flex-direction:column; gap:var(--egap); }
+
+.s4-block {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:10px; padding:clamp(0.75rem,2vw,1.25rem);
+}
+.s4-block-label {
+  font-size:var(--small-size); color:var(--muted);
+  font-weight:700; letter-spacing:0.06em; margin-bottom:0.45em;
+}
+.s4-block-text {
+  font-size:clamp(0.72rem,1.4vw,0.97rem); color:var(--light); line-height:1.65;
+}
+.s4-block-text strong { color:var(--white); }
+.s4-block-text .hl { color:var(--coral); font-weight:700; }
+
+.s4-nest {
+  background:rgba(255,209,102,0.08); border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0; padding:0.6em 0.85em;
+  font-size:clamp(0.7rem,1.3vw,0.92rem); color:var(--gold); line-height:1.6;
+}
+
+.s4-keymsg {
+  background:linear-gradient(135deg,rgba(255,107,53,0.09),rgba(78,205,196,0.09));
+  border:1px solid rgba(255,107,53,0.2); border-radius:10px;
+  padding:clamp(0.7rem,2vw,1.1rem); margin-top:var(--egap);
+}
+.s4-keymsg-label { font-size:var(--small-size); color:var(--muted); margin-bottom:0.35em; }
+.s4-keymsg-text {
+  font-size:clamp(0.8rem,1.6vw,1.05rem); color:var(--white);
+  font-weight:700; line-height:1.5;
+}
+.s4-keymsg-text em { color:var(--coral); font-style:normal; }
+
+/* ============================================================
    SLIDE 3 — INTRO / POLICY FINANCE
    ============================================================ */
 .s3 { background:var(--bg-deep); }
@@ -278,6 +328,70 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 4 — GREENPACK: STARTUP STAGE
+     ============================================================ -->
+<section class="slide s4" id="slide-4">
+  <div class="bg-grid"></div>
+  <div class="glow glow-teal" style="width:38vw;height:38vw;top:-10%;right:-5%;opacity:0.5;"></div>
+
+  <div class="slide-content">
+    <div class="s4-tags reveal">
+      <span class="tag tag-teal">🌿 그린팩 — 친환경 급식용기 스타트업</span>
+      <span class="tag tag-coral">창업 단계</span>
+    </div>
+
+    <h2 style="font-family:var(--fd);font-size:clamp(1.1rem,3vw,2rem);margin-bottom:var(--gap);" class="reveal">
+      창업은 아이디어만으로 되지 않는다
+    </h2>
+
+    <div class="s4-cols">
+      <div class="s4-col">
+        <div class="s4-block reveal">
+          <div class="s4-block-label">🚀 그린팩은?</div>
+          <p class="s4-block-text">
+            아이디어와 기술은 좋지만
+            <strong>자금·신뢰·거래안정성이 부족</strong>한 창업 초기 상황.
+            은행은 <strong>담보와 실적</strong>을 보고 망설입니다.
+          </p>
+        </div>
+        <div class="s4-block reveal">
+          <div class="s4-block-label">❓ 왜 자금을 구하기 어려울까?</div>
+          <p class="s4-block-text">
+            문제는 단순한 "돈 부족"이 아니라
+            <span class="hl">"신뢰 부족"</span>입니다.
+            창업 초기엔 담보도, 실적도, 신용 이력도 없습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="s4-col">
+        <div class="s4-block reveal">
+          <div class="s4-block-label">✅ 신보의 역할</div>
+          <p class="s4-block-text">
+            신보는 이런 기업이 <strong>출발선에 설 수 있도록</strong>
+            보증·스타트업 지원을 연결합니다.
+          </p>
+        </div>
+        <div class="s4-nest reveal">
+          <strong>Start-up NEST</strong><br>
+          혁신 스타트업에 금융과 비금융을 결합한
+          맞춤형 패키지를 제공하는 신보 지원 프로그램
+        </div>
+      </div>
+    </div>
+
+    <div class="s4-keymsg reveal">
+      <div class="s4-keymsg-label">오늘의 메시지</div>
+      <div class="s4-keymsg-text">
+        "창업은 아이디어 경쟁이기도 하지만,
+        <em>신뢰를 확보하는 과정</em>이기도 하다."
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">04 / 09</span>
 </section>
 
 <!-- ============================================================
