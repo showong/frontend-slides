@@ -146,6 +146,50 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 8 — IF I WERE AN INTERVIEWER
+   ============================================================ */
+.s8 { background:var(--bg-navy); }
+
+.s8-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  grid-template-rows:repeat(2,1fr);
+  gap:clamp(0.45rem,1.2vw,0.85rem);
+}
+@media(max-width:600px){ .s8-grid{ grid-template-columns:1fr; grid-template-rows:auto; } }
+
+.s8-card {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:12px; padding:clamp(0.7rem,1.8vw,1.2rem);
+  display:flex; flex-direction:column; gap:0.45em;
+}
+.s8-header { display:flex; align-items:center; gap:0.55em; }
+.s8-num {
+  font-family:var(--fd); font-size:clamp(1.2rem,2.5vw,1.8rem);
+  color:var(--coral); opacity:0.55; line-height:1; flex-shrink:0;
+}
+.s8-title { font-size:clamp(0.82rem,1.6vw,1.05rem); font-weight:700; color:var(--white); }
+.s8-quote {
+  font-size:clamp(0.63rem,1.15vw,0.83rem); color:var(--muted);
+  font-style:italic; line-height:1.55;
+}
+.s8-pills { display:flex; flex-wrap:wrap; gap:0.3em; margin-top:auto; padding-top:0.2em; }
+.s8-pill {
+  background:rgba(78,205,196,0.1); border:1px solid rgba(78,205,196,0.2);
+  color:var(--teal); font-size:clamp(0.58rem,1vw,0.73rem);
+  padding:0.2em 0.65em; border-radius:2rem;
+}
+
+.s8-ncs {
+  grid-column:1/-1; background:rgba(255,209,102,0.07);
+  border:1px solid rgba(255,209,102,0.2); border-radius:8px;
+  padding:clamp(0.5rem,1.3vw,0.85rem) clamp(0.75rem,2vw,1.2rem);
+  font-size:clamp(0.63rem,1.2vw,0.83rem); color:var(--gold);
+  text-align:center; line-height:1.6;
+}
+.s8-ncs strong { color:var(--white); }
+@media(max-width:600px){ .s8-ncs{ grid-column:1; } }
+
+/* ============================================================
    SLIDE 7 — ROLES WITHIN SINBO
    ============================================================ */
 .s7 { background:var(--bg-deep); }
@@ -469,6 +513,82 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 8 — IF I WERE AN INTERVIEWER
+     ============================================================ -->
+<section class="slide s8" id="slide-8">
+  <div class="bg-grid"></div>
+  <div class="glow glow-coral" style="width:36vw;height:36vw;top:-8%;right:-5%;opacity:0.5;"></div>
+
+  <div class="slide-content">
+    <div class="section-label reveal">Part 4 · 채용과 태도</div>
+    <h2 style="font-family:var(--fd);font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
+      내가 면접관이라면 보고 싶은 사람
+    </h2>
+
+    <div class="s8-grid">
+      <div class="s8-card reveal">
+        <div class="s8-header">
+          <div class="s8-num">01</div>
+          <div class="s8-title">어려운 걸 쉽게 설명하는 사람</div>
+        </div>
+        <div class="s8-quote">"아는 사람보다, 상대가 이해하게 만드는 사람이 강합니다."</div>
+        <div class="s8-pills">
+          <span class="s8-pill">결론 먼저</span>
+          <span class="s8-pill">친구에게 설명</span>
+          <span class="s8-pill">자기 말로</span>
+        </div>
+      </div>
+
+      <div class="s8-card reveal">
+        <div class="s8-header">
+          <div class="s8-num">02</div>
+          <div class="s8-title">모르는 걸 숨기지 않고 배우는 사람</div>
+        </div>
+        <div class="s8-quote">"처음부터 다 아는 사람보다, 빨리 배우는 사람이 더 믿음직합니다."</div>
+        <div class="s8-pills">
+          <span class="s8-pill">질문하기</span>
+          <span class="s8-pill">틀린 뒤 고치기</span>
+          <span class="s8-pill">피드백 받기</span>
+        </div>
+      </div>
+
+      <div class="s8-card reveal">
+        <div class="s8-header">
+          <div class="s8-num">03</div>
+          <div class="s8-title">맡은 일을 끝까지 챙기는 사람</div>
+        </div>
+        <div class="s8-quote">"똑똑한 사람은 많지만, 끝까지 책임지는 사람은 생각보다 많지 않습니다."</div>
+        <div class="s8-pills">
+          <span class="s8-pill">조별과제 마무리</span>
+          <span class="s8-pill">시간 약속</span>
+          <span class="s8-pill">작은 일도 끝까지</span>
+        </div>
+      </div>
+
+      <div class="s8-card reveal">
+        <div class="s8-header">
+          <div class="s8-num">04</div>
+          <div class="s8-title">함께 일하고 싶은 사람</div>
+        </div>
+        <div class="s8-quote">"면접에서 결국 남는 건 완벽한 답보다 태도입니다."</div>
+        <div class="s8-pills">
+          <span class="s8-pill">경청</span>
+          <span class="s8-pill">말투</span>
+          <span class="s8-pill">협업</span>
+          <span class="s8-pill">존중</span>
+        </div>
+      </div>
+
+      <div class="s8-ncs reveal">
+        💡 신보 채용은 <strong>NCS 기반</strong>으로 직무능력과 인성을 종합 평가하는 <strong>구조화 면접</strong>을 운영합니다.<br>
+        → "회사는 시험점수만 보는 게 아니라, 실제로 <strong>함께 일할 수 있는 사람</strong>인지를 봅니다."
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">08 / 09</span>
 </section>
 
 <!-- ============================================================
