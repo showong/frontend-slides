@@ -435,6 +435,7 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
   display:grid; grid-template-columns:1fr 1fr;
   gap:var(--gap); flex:1;
 }
+.s3-col { display:flex; flex-direction:column; gap:var(--egap); }
 @media(max-width:680px){ .s3-grid{ grid-template-columns:1fr; } }
 
 /* 카드 컨테이너 */
@@ -685,78 +686,88 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 
     <div class="s3-grid reveal">
 
-      <!-- 카드 1: 정책금융 -->
-      <div class="s3-card coral">
-        <div class="bar"></div>
-        <div class="s3-face">
-          <div class="s3-face-icon">🏦</div>
-          <div class="s3-face-title">정책금융이란?</div>
-          <div class="s3-face-sub">클릭해서 알아보기</div>
-        </div>
-        <div class="s3-back">
-          <div class="s3-back-title">정책금융이란?</div>
-          <p class="s3-back-text">
-            가능성은 있지만 <strong>자금·신뢰가 부족</strong>한 기업을 위한 장치.<br>
-            시작 · 성장 · 위기 극복까지 <strong>출발선을 만들어주는 금융</strong>입니다.
-          </p>
-          <span class="s3-close-hint">다시 클릭해 닫기</span>
-        </div>
-      </div>
+      <!-- 컬럼 1 -->
+      <div class="s3-col">
 
-      <!-- 카드 2: 신보 역할 -->
-      <div class="s3-card teal">
-        <div class="bar"></div>
-        <div class="s3-face">
-          <div class="s3-face-icon">🔗</div>
-          <div class="s3-face-title">신용보증기금의 역할</div>
-          <div class="s3-face-sub">클릭해서 알아보기</div>
+        <!-- 카드 1: 정책금융 -->
+        <div class="s3-card coral">
+          <div class="bar"></div>
+          <div class="s3-face">
+            <div class="s3-face-icon">🏦</div>
+            <div class="s3-face-title">정책금융이란?</div>
+            <div class="s3-face-sub">클릭해서 알아보기</div>
+          </div>
+          <div class="s3-back">
+            <div class="s3-back-title">정책금융이란?</div>
+            <p class="s3-back-text">
+              가능성은 있지만 <strong>자금·신뢰가 부족</strong>한 기업을 위한 장치.<br>
+              시작 · 성장 · 위기 극복까지 <strong>출발선을 만들어주는 금융</strong>입니다.
+            </p>
+            <span class="s3-close-hint">다시 클릭해 닫기</span>
+          </div>
         </div>
-        <div class="s3-back">
-          <div class="s3-back-title">신용보증기금의 역할</div>
-          <p class="s3-back-text">
-            기업의 <strong>시작 → 성장 → 거래 → 재기</strong>,<br>
-            전 과정을 금융으로 <strong>연결</strong>합니다.
-          </p>
-          <span class="s3-close-hint">다시 클릭해 닫기</span>
-        </div>
-      </div>
 
-      <!-- 카드 3: 강사 소개 -->
-      <div class="s3-card gold">
-        <div class="bar"></div>
-        <div class="s3-face">
-          <div class="s3-face-icon">👤</div>
-          <div class="s3-face-title">강사 소개</div>
-          <div class="s3-face-sub">클릭해서 알아보기</div>
+        <!-- 카드 3: 강사 소개 -->
+        <div class="s3-card gold">
+          <div class="bar"></div>
+          <div class="s3-face">
+            <div class="s3-face-icon">👤</div>
+            <div class="s3-face-title">강사 소개</div>
+            <div class="s3-face-sub">클릭해서 알아보기</div>
+          </div>
+          <div class="s3-back">
+            <div class="s3-back-title">강사 소개</div>
+            <p class="s3-back-text">
+              신보 <strong>13년 현장</strong> — 창업·성장·위기·재기를<br>
+              직접 옆에서 지켜본 사람이 전하는 이야기입니다.
+            </p>
+            <span class="s3-close-hint">다시 클릭해 닫기</span>
+          </div>
         </div>
-        <div class="s3-back">
-          <div class="s3-back-title">강사 소개</div>
-          <p class="s3-back-text">
-            신보 <strong>13년 현장</strong> — 창업·성장·위기·재기를<br>
-            직접 옆에서 지켜본 사람이 전하는 이야기입니다.
-          </p>
-          <span class="s3-close-hint">다시 클릭해 닫기</span>
-        </div>
-      </div>
 
-      <!-- 카드 4: 오늘 목표 -->
-      <div class="s3-card blue">
-        <div class="bar"></div>
-        <div class="s3-face">
-          <div class="s3-face-icon">🎯</div>
-          <div class="s3-face-title">오늘 얻어갈 것</div>
-          <div class="s3-face-sub">클릭해서 알아보기</div>
+      </div><!-- /s3-col -->
+
+      <!-- 컬럼 2 -->
+      <div class="s3-col">
+
+        <!-- 카드 2: 신보 역할 -->
+        <div class="s3-card teal">
+          <div class="bar"></div>
+          <div class="s3-face">
+            <div class="s3-face-icon">🔗</div>
+            <div class="s3-face-title">신용보증기금의 역할</div>
+            <div class="s3-face-sub">클릭해서 알아보기</div>
+          </div>
+          <div class="s3-back">
+            <div class="s3-back-title">신용보증기금의 역할</div>
+            <p class="s3-back-text">
+              기업의 <strong>시작 → 성장 → 거래 → 재기</strong>,<br>
+              전 과정을 금융으로 <strong>연결</strong>합니다.
+            </p>
+            <span class="s3-close-hint">다시 클릭해 닫기</span>
+          </div>
         </div>
-        <div class="s3-back">
-          <div class="s3-back-title">오늘 얻어갈 것</div>
-          <ul class="s3-back-text">
-            <li>정책금융이 <strong>왜</strong> 필요한지</li>
-            <li>신보가 기업 성장 전 과정에서 <strong>어떻게</strong> 돕는지</li>
-            <li>그 일을 잘하는 <strong>사람의 태도</strong></li>
-          </ul>
-          <span class="s3-close-hint">다시 클릭해 닫기</span>
+
+        <!-- 카드 4: 오늘 목표 -->
+        <div class="s3-card blue">
+          <div class="bar"></div>
+          <div class="s3-face">
+            <div class="s3-face-icon">🎯</div>
+            <div class="s3-face-title">오늘 얻어갈 것</div>
+            <div class="s3-face-sub">클릭해서 알아보기</div>
+          </div>
+          <div class="s3-back">
+            <div class="s3-back-title">오늘 얻어갈 것</div>
+            <ul class="s3-back-text">
+              <li>정책금융이 <strong>왜</strong> 필요한지</li>
+              <li>신보가 기업 성장 전 과정에서 <strong>어떻게</strong> 돕는지</li>
+              <li>그 일을 잘하는 <strong>사람의 태도</strong></li>
+            </ul>
+            <span class="s3-close-hint">다시 클릭해 닫기</span>
+          </div>
         </div>
-      </div>
+
+      </div><!-- /s3-col -->
 
     </div>
   </div>
