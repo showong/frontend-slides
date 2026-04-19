@@ -424,7 +424,7 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 /* ============================================================
    SLIDE 3 — INTRO / POLICY FINANCE (interactive flip cards)
    ============================================================ */
-.s3 { background:var(--bg-deep); }
+.s3 { background:var(--bg-navy); }
 
 .s3-hint {
   font-size:var(--small-size); color:var(--muted);
@@ -433,9 +433,10 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 
 .s3-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:clamp(0.8rem,2vw,1.2rem); flex:1;
+  gap:clamp(0.48rem,1.2vw,0.72rem); flex:1;
+  max-width:60%; margin:0 auto;
 }
-@media(max-width:680px){ .s3-grid{ grid-template-columns:1fr; } }
+@media(max-width:680px){ .s3-grid{ grid-template-columns:1fr; max-width:90%; } }
 
 /* 카드 컨테이너 */
 .s3-card {
@@ -443,7 +444,7 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
   border-radius:14px; cursor:pointer;
   transition:border-color 0.3s, transform 0.2s, box-shadow 0.3s;
   overflow:hidden; position:relative;
-  min-height:clamp(7rem,14vh,11rem);
+  min-height:clamp(4.2rem,8.4vh,6.6rem);
   display:flex; flex-direction:column;
 }
 .s3-card:hover {
@@ -469,12 +470,12 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 .s3-face {
   flex:1; display:flex; flex-direction:column;
   justify-content:center; align-items:flex-start;
-  padding:clamp(1rem,2.5vw,1.8rem);
-  gap:0.5em;
+  padding:clamp(0.6rem,1.5vw,1.08rem);
+  gap:0.4em;
 }
-.s3-face-icon { font-size:clamp(1.4rem,2.5vw,2rem); }
+.s3-face-icon { font-size:clamp(1rem,1.8vw,1.4rem); }
 .s3-face-title {
-  font-size:clamp(0.95rem,2vw,1.25rem); font-weight:700; color:var(--white);
+  font-size:clamp(0.82rem,1.6vw,1rem); font-weight:700; color:var(--white);
   line-height:1.3;
 }
 .s3-face-sub {
@@ -487,8 +488,8 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 .s3-back {
   position:absolute; inset:0;
   background:var(--bg-card);
-  padding:clamp(0.9rem,2vw,1.4rem);
-  display:flex; flex-direction:column; justify-content:center; gap:0.6em;
+  padding:clamp(0.54rem,1.2vw,0.84rem);
+  display:flex; flex-direction:column; justify-content:center; gap:0.4em;
   opacity:0; pointer-events:none;
   transition:opacity 0.3s ease;
   border-radius:14px;
@@ -674,7 +675,8 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
      ============================================================ -->
 <section class="slide s3" id="slide-3">
   <div class="bg-grid"></div>
-  <div class="glow glow-teal" style="width:38vw;height:38vw;top:-8%;right:-5%;opacity:0.6;"></div>
+  <div class="glow glow-coral" style="width:36vw;height:36vw;top:-6%;left:-4%;opacity:0.6;"></div>
+  <div class="glow glow-teal"  style="width:32vw;height:32vw;bottom:-5%;right:-4%;opacity:0.5;"></div>
 
   <div class="slide-content">
     <div class="section-label reveal">정책금융 · 신용보증기금 소개</div>
