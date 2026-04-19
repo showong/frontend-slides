@@ -146,6 +146,59 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 7 — ROLES WITHIN SINBO
+   ============================================================ */
+.s7 { background:var(--bg-deep); }
+
+.s7-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:clamp(0.4rem,1.2vw,0.8rem);
+}
+@media(max-width:900px){ .s7-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:480px){ .s7-grid{ grid-template-columns:1fr; } }
+
+.s7-card {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:12px; padding:clamp(0.7rem,1.8vw,1.2rem);
+  display:flex; flex-direction:column; gap:0.45em;
+  transition:border-color 0.3s;
+}
+.s7-card:hover { border-color:rgba(255,107,53,0.3); }
+
+.s7-icon {
+  width:2.3rem; height:2.3rem; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.ic1{ background:rgba(255,107,53,0.15); }
+.ic2{ background:rgba(78,205,196,0.15); }
+.ic3{ background:rgba(255,209,102,0.15); }
+.ic4{ background:rgba(96,165,250,0.15); }
+
+.s7-name { font-size:clamp(0.78rem,1.5vw,1rem); font-weight:700; color:var(--white); }
+.s7-desc { font-size:clamp(0.62rem,1.05vw,0.78rem); color:var(--muted); line-height:1.45; }
+
+.s7-traits { list-style:none; display:flex; flex-direction:column; gap:0.2em; margin-top:0.2em; }
+.s7-traits li {
+  font-size:clamp(0.6rem,1vw,0.75rem); color:var(--light);
+  display:flex; align-items:flex-start; gap:0.3em; line-height:1.4;
+}
+.s7-traits li::before { content:'•'; color:var(--teal); flex-shrink:0; }
+
+.s7-student {
+  border-top:1px solid var(--divider); padding-top:0.4em; margin-top:0.2em;
+  font-size:clamp(0.58rem,0.95vw,0.72rem); color:var(--muted); line-height:1.5;
+}
+.s7-student span { color:var(--coral); font-weight:700; }
+
+.s7-footer {
+  text-align:center; border-top:1px solid var(--divider);
+  padding-top:clamp(0.5rem,1.2vw,0.9rem); margin-top:var(--egap);
+  font-size:clamp(0.65rem,1.3vw,0.9rem); color:var(--muted); line-height:1.6;
+}
+.s7-footer em { color:var(--coral); font-style:normal; }
+
+/* ============================================================
    SLIDE 6 — RECOVERY STAGE
    ============================================================ */
 .s6 { background:var(--bg-navy); }
@@ -416,6 +469,91 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 7 — ROLES WITHIN SINBO
+     ============================================================ -->
+<section class="slide s7" id="slide-7">
+  <div class="bg-grid"></div>
+
+  <div class="slide-content">
+    <div class="section-label reveal">Part 3 · 신보 안의 사람들</div>
+    <h2 style="font-family:var(--fd);font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
+      신보 안의 다양한 역할
+    </h2>
+
+    <div class="s7-grid">
+      <!-- 영업점 -->
+      <div class="s7-card reveal">
+        <div class="s7-icon ic1">🏪</div>
+        <div class="s7-name">일반영업점</div>
+        <div class="s7-desc">기업을 가장 가까이에서 만나는 곳</div>
+        <ul class="s7-traits">
+          <li>상담·기업 상황 파악·자료 검토</li>
+          <li>신용조사·보증심사의 출발점</li>
+          <li>끝까지 듣는 사람</li>
+          <li>숫자와 사람을 같이 보는 사람</li>
+        </ul>
+        <div class="s7-student">
+          <span>학생 연결:</span> 발표 때 결론 먼저 · 상대가 이해하게 설명 · 조별과제 끝까지
+        </div>
+      </div>
+
+      <!-- 신용보험센터 -->
+      <div class="s7-card reveal">
+        <div class="s7-icon ic2">🛡️</div>
+        <div class="s7-name">신용보험센터</div>
+        <div class="s7-desc">거래가 끝까지 안전하게 마무리되도록 지키는 곳</div>
+        <ul class="s7-traits">
+          <li>매출채권보험 안내·운영</li>
+          <li>거래처 리스크 관리</li>
+          <li>꼼꼼하고 이상신호 놓치지 않는 사람</li>
+          <li>숫자 뒤 의미를 읽는 사람</li>
+        </ul>
+        <div class="s7-student">
+          <span>학생 연결:</span> 결과보다 원인 보기 · 작은 실수 넘기지 않기 · 이상 부분 찾는 연습
+        </div>
+      </div>
+
+      <!-- 재기지원단 -->
+      <div class="s7-card reveal">
+        <div class="s7-icon ic3">🔄</div>
+        <div class="s7-name">재기지원단</div>
+        <div class="s7-desc">어려움을 겪은 기업이 다시 일어설 기회를 돕는 곳</div>
+        <ul class="s7-traits">
+          <li>회복 가능성을 보는 역할</li>
+          <li>재기·회복 경로 연결</li>
+          <li>사람을 단편적으로 보지 않는 사람</li>
+          <li>긴 호흡으로 문제를 보는 사람</li>
+        </ul>
+        <div class="s7-student">
+          <span>학생 연결:</span> 실수 하나로 사람 전체 판단하지 않기 · 실패 경험 다시 정리 · 빨리 단정하지 않기
+        </div>
+      </div>
+
+      <!-- 본점 -->
+      <div class="s7-card reveal">
+        <div class="s7-icon ic4">🏛️</div>
+        <div class="s7-name">본점</div>
+        <div class="s7-desc">현장이 잘 움직이도록 제도와 시스템을 설계하는 곳</div>
+        <ul class="s7-traits">
+          <li>4부문 16부 6실 운영</li>
+          <li>전체 기준·시스템 설계</li>
+          <li>큰 그림을 보는 사람</li>
+          <li>데이터로 개선점을 찾는 사람</li>
+        </ul>
+        <div class="s7-student">
+          <span>학생 연결:</span> 눈앞 문제보다 구조 보기 · 반복 문제 원인 생각 · 자료 정리해 기준 세우기
+        </div>
+      </div>
+    </div>
+
+    <div class="s7-footer reveal">
+      "자리마다 역할은 달라도, <em>사람과 문제를 이해하는 힘</em>은 같다."
+    </div>
+  </div>
+  <span class="slide-num">07 / 09</span>
 </section>
 
 <!-- ============================================================
