@@ -146,6 +146,45 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
 }
 
 /* ============================================================
+   SLIDE 3 — INTRO / POLICY FINANCE
+   ============================================================ */
+.s3 { background:var(--bg-deep); }
+
+.s3-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(0.5rem,1.5vw,1rem);
+}
+@media(max-width:680px){ .s3-grid{ grid-template-columns:1fr; } }
+
+.s3-box {
+  background:var(--bg-card); border:1px solid var(--divider);
+  border-radius:12px; padding:clamp(0.9rem,2vw,1.5rem);
+  display:flex; flex-direction:column; gap:0.5em;
+}
+.s3-box-coral { border-top:3px solid var(--coral); }
+.s3-box-teal  { border-top:3px solid var(--teal); }
+
+.s3-box-label {
+  font-size:var(--small-size); font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+.s3-box-label.c { color:var(--coral); }
+.s3-box-label.t { color:var(--teal); }
+
+.s3-box-text {
+  font-size:clamp(0.72rem,1.4vw,0.97rem);
+  color:var(--light); line-height:1.7;
+}
+.s3-box-text strong { color:var(--white); }
+
+.s3-goals { list-style:none; display:flex; flex-direction:column; gap:0.45em; }
+.s3-goals li {
+  font-size:clamp(0.72rem,1.4vw,0.97rem); color:var(--light);
+  display:flex; align-items:flex-start; gap:0.5em; line-height:1.5;
+}
+.s3-goals li::before { content:'▶'; color:var(--teal); font-size:0.65em; margin-top:0.3em; flex-shrink:0; }
+
+/* ============================================================
    SLIDE 2 — OPENING QUESTIONS
    ============================================================ */
 .s2 { background:var(--bg-navy); }
@@ -239,6 +278,58 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); }
     </div>
   </div>
   <span class="slide-num">01 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 3 — INTRO / POLICY FINANCE
+     ============================================================ -->
+<section class="slide s3" id="slide-3">
+  <div class="bg-grid"></div>
+  <div class="glow glow-teal" style="width:38vw;height:38vw;top:-8%;right:-5%;opacity:0.6;"></div>
+
+  <div class="slide-content">
+    <div class="section-label reveal">정책금융 · 신용보증기금 소개</div>
+    <h2 style="font-family:var(--fd);font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
+      오늘 이 이야기를 하는 이유
+    </h2>
+
+    <div class="s3-grid">
+      <div class="s3-box s3-box-coral reveal">
+        <div class="s3-box-label c">정책금융이란?</div>
+        <p class="s3-box-text">
+          가능성은 있지만 아직 <strong>자금이나 신뢰가 부족</strong>해서 출발하기 어려운 기업들이 있습니다.
+          이런 기업들이 <strong>시작하고, 성장하고, 위기를 넘길 수 있도록</strong> 돕는 장치가 정책금융입니다.
+        </p>
+      </div>
+
+      <div class="s3-box s3-box-teal reveal">
+        <div class="s3-box-label t">신용보증기금의 역할</div>
+        <p class="s3-box-text">
+          기업이 <strong>시작하고, 성장하고, 거래를 지키고, 다시 일어설 수 있도록</strong>
+          여러 방식으로 연결하는 역할을 합니다.
+        </p>
+      </div>
+
+      <div class="s3-box reveal">
+        <div class="s3-box-label c">강사 소개</div>
+        <p class="s3-box-text">
+          신용보증기금에서 <strong>13년간</strong> 일하며 다양한 기업을 현장에서 만나왔습니다.
+          창업 초기 기업이 어떻게 시작하는지, 성장 과정의 자금 필요성,
+          거래처 문제가 주는 영향까지 실제로 봐왔습니다.
+        </p>
+      </div>
+
+      <div class="s3-box reveal">
+        <div class="s3-box-label t">오늘 얻어갈 것</div>
+        <ul class="s3-goals">
+          <li>정책금융이 왜 필요한지 이해</li>
+          <li>신보가 기업의 시작·성장·위기·재기 과정에서 어떻게 돕는지 이해</li>
+          <li>그 안에서 일하는 사람의 특징과 학생 때부터 준비할 태도</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">03 / 09</span>
 </section>
 
 <!-- ============================================================
