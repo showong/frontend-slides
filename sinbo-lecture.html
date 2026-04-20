@@ -24,6 +24,16 @@
   --fb:        'Noto Sans KR', sans-serif;
   --ease:      cubic-bezier(0.16,1,0.3,1);
 
+  /* Light theme (new deck) */
+  --bg-light:     #ffffff;
+  --bg-soft:      #f7f9fc;
+  --deep-navy:    #0a1f44;
+  --accent-blue:  #2b6cb0;
+  --accent-green: #2f855a;
+  --text-dark:    #2d3748;
+  --text-muted:   #718096;
+  --line-light:   #e2e8f0;
+
   /* viewport-base.css variables */
   --title-size:   clamp(1.5rem, 5vw, 4rem);
   --h2-size:      clamp(1.25rem, 3.5vw, 2.5rem);
@@ -556,39 +566,70 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 .s2-msg-text em { color:var(--white); font-style:normal; font-weight:700; }
 
 /* ============================================================
-   SLIDE 1 — TITLE
+   SLIDE 1 — COVER (light theme, connected-nodes infographic)
    ============================================================ */
-.s1 { background:var(--bg-deep); }
-
-.s1-badge {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  background:rgba(255,107,53,0.12); border:1px solid rgba(255,107,53,0.28);
-  color:var(--coral); font-size:var(--small-size); font-weight:700;
-  padding:0.35em 1em; border-radius:2rem; letter-spacing:0.08em;
-  width:fit-content; margin-bottom:var(--gap);
+.s1 { background:var(--bg-light); color:var(--text-dark); }
+.s1 .slide-content {
+  justify-content:center; align-items:center; text-align:center;
 }
+
 .s1-title {
-  font-family:var(--fd); font-weight:700; font-size:clamp(2rem,7vw,5.5rem);
-  line-height:1.1; color:var(--white); margin-bottom:0.35em;
+  font-family:var(--fd); font-weight:700;
+  font-size:clamp(1.75rem,5.5vw,4rem);
+  line-height:1.28; color:var(--deep-navy);
+  margin-bottom:clamp(0.85rem,2vw,1.25rem);
+  max-width:22ch;
 }
-.s1-title em { color:var(--coral); font-style:normal; }
-.s1-sub {
-  font-size:clamp(0.85rem,2vw,1.3rem); color:var(--light);
-  font-weight:400; line-height:1.65; margin-bottom:var(--gap); max-width:50ch;
-}
-.s1-meta {
-  display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;
-}
-.s1-meta-item { font-size:var(--small-size); color:var(--muted); }
-.s1-meta-sep { width:1px; height:0.9em; background:var(--muted); }
 
-/* decorative large character */
-.s1-deco {
-  position:absolute; right:clamp(2rem,6vw,8rem); top:50%;
-  transform:translateY(-50%);
-  font-family:var(--fd); font-size:clamp(8rem,22vw,20rem);
-  color:rgba(255,107,53,0.04); line-height:1; user-select:none;
-  pointer-events:none;
+.s1-sub {
+  font-size:clamp(0.95rem,1.8vw,1.35rem);
+  color:var(--text-muted); font-weight:400;
+  line-height:1.55; letter-spacing:0.01em;
+  margin-bottom:clamp(2.5rem,6vw,5rem);
+}
+
+/* Connection infographic — 4 circles linked by thin lines */
+.s1-connection {
+  display:flex; align-items:center; justify-content:center;
+  gap:0; flex-wrap:nowrap;
+}
+.s1-node-circle {
+  width:clamp(3.5rem,7vw,5rem);
+  height:clamp(3.5rem,7vw,5rem);
+  border-radius:50%;
+  border:1.5px solid var(--accent-blue);
+  background:var(--bg-light);
+  color:var(--deep-navy);
+  font-size:clamp(0.78rem,1.25vw,1rem);
+  font-weight:500;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  transition:transform 0.4s var(--ease);
+}
+.s1.visible .s1-node-circle:nth-child(3) { transition-delay:0.3s; }
+.s1.visible .s1-node-circle:nth-child(5) { transition-delay:0.5s; }
+.s1.visible .s1-node-circle:nth-child(7) { transition-delay:0.7s; }
+.s1-node-line {
+  width:clamp(1.5rem,4vw,3rem);
+  height:1.5px;
+  background:var(--line-light);
+  flex-shrink:0;
+}
+
+/* Speaker affiliation at bottom-right */
+.s1-affiliation {
+  position:absolute;
+  bottom:clamp(1.5rem,3vw,2.5rem);
+  right:clamp(1.5rem,3vw,2.5rem);
+  font-size:clamp(0.75rem,1vw,0.88rem);
+  color:var(--text-muted);
+  letter-spacing:0.04em;
+  text-align:right;
+  line-height:1.55;
+}
+.s1-affiliation strong {
+  color:var(--deep-navy); font-weight:700;
+  display:block; margin-bottom:0.15em;
 }
 </style>
 </head>
@@ -601,25 +642,28 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
      SLIDE 1 — TITLE
      ============================================================ -->
 <section class="slide s1" id="slide-1">
-  <div class="bg-grid"></div>
-  <div class="glow glow-coral" style="width:45vw;height:45vw;top:-10%;left:-8%;"></div>
-  <div class="glow glow-teal"  style="width:35vw;height:35vw;bottom:-8%;right:25%;"></div>
-  <div class="s1-deco">신</div>
-
   <div class="slide-content">
-    <div class="s1-badge reveal">금융이지 특강 · 신용보증기금</div>
-    <h1 class="s1-title reveal">가능성을 <em>연결</em>하는 금융</h1>
-    <p class="s1-sub reveal">한 회사를 키우고 지키는<br>신용보증기금의 역할</p>
-    <div class="accent-line reveal"></div>
-    <div class="s1-meta reveal">
-      <span class="s1-meta-item">1시간 특강</span>
-      <span class="s1-meta-sep"></span>
-      <span class="s1-meta-item">창업 · 성장 · 위기관리 · 재기</span>
-      <span class="s1-meta-sep"></span>
-      <span class="s1-meta-item">2026</span>
+    <h1 class="s1-title reveal">
+      금융은 정말<br>어른들만의 이야기일까?
+    </h1>
+    <p class="s1-sub reveal">돈, 회사, 그리고 일의 이야기</p>
+
+    <!-- 연결선형 인포그래픽: 생활 — 금융 — 회사 — 진로 -->
+    <div class="s1-connection reveal" aria-hidden="true">
+      <div class="s1-node-circle">생활</div>
+      <div class="s1-node-line"></div>
+      <div class="s1-node-circle">금융</div>
+      <div class="s1-node-line"></div>
+      <div class="s1-node-circle">회사</div>
+      <div class="s1-node-line"></div>
+      <div class="s1-node-circle">진로</div>
     </div>
   </div>
-  <span class="slide-num">01 / 09</span>
+
+  <div class="s1-affiliation">
+    <strong>신용보증기금</strong>
+    금융교육 특강
+  </div>
 </section>
 
 <!-- ============================================================
