@@ -537,33 +537,73 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 }
 
 /* ============================================================
-   SLIDE 2 — OPENING QUESTIONS
+   DECK SHARED (light theme) — used by all rebuilt slides
+   Layout: top 15% title, middle 65% content, bottom 20% takeaway
    ============================================================ */
-.s2 { background:var(--bg-navy); }
+.deck-title {
+  font-family:var(--fd); font-weight:700;
+  font-size:clamp(1.3rem,3vw,2rem);
+  line-height:1.3; color:var(--deep-navy);
+  margin-bottom:clamp(1rem,2.5vw,1.75rem);
+}
+.deck-title em { color:var(--accent-blue); font-style:normal; }
 
-.s2-grid { display:flex; flex-direction:column; gap:var(--egap); }
+.deck-body {
+  flex:1; display:flex; flex-direction:column; justify-content:center;
+  min-height:0;
+}
+
+.deck-takeaway {
+  margin-top:auto;
+  padding-top:clamp(0.85rem,2vw,1.35rem);
+  border-top:1px solid var(--line-light);
+  font-size:clamp(0.88rem,1.35vw,1.05rem);
+  color:var(--text-muted);
+  text-align:center;
+  line-height:1.55;
+}
+.deck-takeaway strong { color:var(--deep-navy); font-weight:700; }
+
+/* ============================================================
+   SLIDE 2 — OPENING QUESTIONS (3-card horizontal)
+   ============================================================ */
+.s2 { background:var(--bg-light); color:var(--text-dark); }
+
+.s2-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(0.9rem,2.2vw,1.75rem);
+  align-items:stretch;
+}
+@media(max-width:720px){ .s2-grid{ grid-template-columns:1fr; } }
+
 .s2-card {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:12px; padding:clamp(0.8rem,2vw,1.4rem) clamp(1rem,2.5vw,1.8rem);
-  display:flex; align-items:center; gap:clamp(0.8rem,2vw,1.5rem);
-  transition:border-color 0.3s;
+  background:var(--bg-soft); border:1px solid var(--line-light);
+  border-radius:14px; padding:clamp(1.1rem,2.8vw,1.85rem);
+  display:flex; flex-direction:column; gap:clamp(0.75rem,1.5vw,1.1rem);
+  transition:border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.s2-card:hover { border-color:rgba(255,107,53,0.3); }
+.s2-card:hover {
+  border-color:var(--accent-blue); transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(10,31,68,0.06);
+}
+.s2-icon {
+  width:clamp(2.5rem,4.2vw,3.3rem);
+  height:clamp(2.5rem,4.2vw,3.3rem);
+  border-radius:50%; background:var(--bg-light);
+  border:1.5px solid var(--accent-blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(1.1rem,2vw,1.4rem);
+}
 .s2-qnum {
-  font-family:var(--fd); font-weight:700; font-size:clamp(1.4rem,3.5vw,2.2rem);
-  color:var(--coral); opacity:0.5; flex-shrink:0; min-width:2ch;
+  font-size:clamp(0.72rem,1vw,0.82rem);
+  color:var(--accent-blue); font-weight:700;
+  letter-spacing:0.14em; text-transform:uppercase;
 }
-.s2-qtext { font-size:clamp(1rem,2vw,1.25rem); color:var(--white); font-weight:600; line-height:1.5; }
-.s2-qhint { font-size:var(--small-size); color:var(--muted); margin-top:0.2em; }
-.s2-msg {
-  background:linear-gradient(135deg,rgba(255,107,53,0.08),rgba(78,205,196,0.08));
-  border:1px solid rgba(255,107,53,0.18); border-radius:10px;
-  padding:clamp(0.85rem,2vw,1.2rem); margin-top:var(--egap);
+.s2-qtext {
+  font-size:clamp(0.95rem,1.5vw,1.15rem);
+  color:var(--deep-navy); font-weight:500;
+  line-height:1.55; margin-top:auto;
 }
-.s2-msg-text {
-  font-size:clamp(0.8rem,1.6vw,1.05rem); color:var(--light); line-height:1.65;
-}
-.s2-msg-text em { color:var(--white); font-style:normal; font-weight:700; }
 
 /* ============================================================
    SLIDE 1 — COVER (light theme, connected-nodes infographic)
@@ -667,50 +707,34 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 </section>
 
 <!-- ============================================================
-     SLIDE 2 — OPENING QUESTIONS
+     SLIDE 2 — OPENING QUESTIONS (3-card horizontal)
      ============================================================ -->
 <section class="slide s2" id="slide-2">
-  <div class="bg-grid"></div>
-  <div class="glow glow-coral" style="width:40vw;height:40vw;bottom:5%;right:-5%;opacity:0.7;"></div>
-
   <div class="slide-content">
-    <div class="section-label reveal">Part 1 · 도입</div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
-      왜 이 이야기를 들어야 할까?
-    </h2>
+    <h2 class="deck-title reveal">먼저, 세 가지만 생각해볼까요?</h2>
 
-    <div class="s2-grid">
-      <div class="s2-card reveal">
-        <div class="s2-qnum">Q1</div>
-        <div>
-          <div class="s2-qtext">좋은 아이디어만 있으면 회사는 성공할까?</div>
-          <div class="s2-qhint">창업에 필요한 것들을 생각해보자</div>
+    <div class="deck-body">
+      <div class="s2-grid">
+        <div class="s2-card reveal">
+          <div class="s2-icon">💳</div>
+          <div class="s2-qnum">Q1</div>
+          <p class="s2-qtext">금융은 정말 어른들만의 이야기일까?</p>
         </div>
-      </div>
-      <div class="s2-card reveal">
-        <div class="s2-qnum">Q2</div>
-        <div>
-          <div class="s2-qtext">물건을 많이 팔아도 회사가 망할 수 있을까?</div>
-          <div class="s2-qhint">매출과 현금흐름은 다르다</div>
+        <div class="s2-card reveal">
+          <div class="s2-icon">💡</div>
+          <div class="s2-qnum">Q2</div>
+          <p class="s2-qtext">좋은 아이디어가 있어도<br>왜 어떤 회사는 시작이 어려울까?</p>
         </div>
-      </div>
-      <div class="s2-card reveal">
-        <div class="s2-qnum">Q3</div>
-        <div>
-          <div class="s2-qtext">취업할 때 회사는 성적만 볼까?</div>
-          <div class="s2-qhint">실제 채용에서 보는 것들</div>
+        <div class="s2-card reveal">
+          <div class="s2-icon">🤝</div>
+          <div class="s2-qnum">Q3</div>
+          <p class="s2-qtext">회사에서는<br>어떤 사람과 함께 일하고 싶어 할까?</p>
         </div>
       </div>
     </div>
 
-    <div class="s2-msg reveal">
-      <p class="s2-msg-text">
-        "나중에 창업을 하든, 기업에 취업을 하든, 경제를 이해하는 시민이 되든 —
-        <em>회사가 어떻게 만들어지고 성장하고 위험을 관리하는지</em> 아는 건 큰 도움이 됩니다."
-      </p>
-    </div>
+    <p class="deck-takeaway reveal">오늘은 이 <strong>세 질문에 답하는 시간</strong>입니다.</p>
   </div>
-  <span class="slide-num">02 / 09</span>
 </section>
 
 <!-- ============================================================
