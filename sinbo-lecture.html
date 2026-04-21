@@ -241,145 +241,142 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 @media(max-width:600px){ .s8-ncs{ grid-column:1; } }
 
 /* ============================================================
-   SLIDE 7 — ROLES WITHIN SINBO
+   SLIDE 5 — WHAT IS FINANCE (centered, bidirectional connection)
    ============================================================ */
-.s7 { background:var(--bg-deep); }
+.s5 { background:var(--bg-light); color:var(--text-dark); }
+.s5 .slide-content { justify-content:center; }
 
-.s7-grid {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:clamp(0.54rem,1.2vw,0.8rem);
+.s5-body { text-align:center; display:flex; flex-direction:column; align-items:center; }
+
+.s5-def {
+  display:flex; flex-direction:column;
+  gap:clamp(0.2rem,0.5vw,0.4rem);
+  font-size:clamp(1.05rem,2.2vw,1.65rem);
+  color:var(--deep-navy); font-weight:700;
+  line-height:1.5;
+  margin-bottom:clamp(1.75rem,4vw,3rem);
 }
-@media(max-width:900px){ .s7-grid{ grid-template-columns:repeat(2,1fr); } }
-@media(max-width:480px){ .s7-grid{ grid-template-columns:1fr; } }
+.s5-def em { color:var(--accent-blue); font-style:normal; }
 
-.s7-card {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:12px; padding:clamp(0.84rem,1.8vw,1.2rem);
-  display:flex; flex-direction:column; gap:0.45em;
-  transition:border-color 0.3s;
-}
-.s7-card:hover { border-color:rgba(255,107,53,0.3); }
-
-.s7-icon {
-  width:2.3rem; height:2.3rem; border-radius:8px;
+.s5-connect {
   display:flex; align-items:center; justify-content:center;
-  font-size:1.1rem; flex-shrink:0;
+  gap:clamp(0.55rem,1.3vw,1rem);
+  flex-wrap:nowrap;
 }
-.ic1{ background:rgba(255,107,53,0.15); }
-.ic2{ background:rgba(78,205,196,0.15); }
-.ic3{ background:rgba(255,209,102,0.15); }
-.ic4{ background:rgba(96,165,250,0.15); }
-
-.s7-name { font-size:clamp(0.88rem,1.5vw,1rem); font-weight:700; color:var(--white); }
-.s7-desc { font-size:clamp(0.76rem,1.05vw,0.78rem); color:var(--muted); line-height:1.45; }
-
-.s7-traits { list-style:none; display:flex; flex-direction:column; gap:0.2em; margin-top:0.2em; }
-.s7-traits li {
-  font-size:clamp(0.74rem,1vw,0.75rem); color:var(--light);
-  display:flex; align-items:flex-start; gap:0.3em; line-height:1.4;
+.s5-side {
+  width:clamp(7rem,14vw,10rem);
+  padding:clamp(0.85rem,1.7vw,1.2rem);
+  border:1.5px solid var(--line-light);
+  border-radius:12px; background:var(--bg-soft);
+  text-align:center;
 }
-.s7-traits li::before { content:'•'; color:var(--teal); flex-shrink:0; }
-
-.s7-student {
-  border-top:1px solid var(--divider); padding-top:0.4em; margin-top:0.2em;
-  font-size:clamp(0.72rem,0.95vw,0.72rem); color:var(--muted); line-height:1.5;
+.s5-side-icon { font-size:clamp(1.1rem,1.8vw,1.5rem); margin-bottom:0.3em; }
+.s5-side-label { font-size:clamp(0.82rem,1.3vw,0.98rem); color:var(--deep-navy); font-weight:700; }
+.s5-side-sub { font-size:clamp(0.7rem,1vw,0.8rem); color:var(--text-muted); margin-top:0.2em; }
+.s5-arrow { color:var(--accent-blue); font-size:clamp(1.1rem,1.8vw,1.5rem); font-weight:700; }
+.s5-middle {
+  width:clamp(3.5rem,6.5vw,5rem);
+  height:clamp(3.5rem,6.5vw,5rem);
+  border-radius:50%;
+  background:var(--accent-blue); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:clamp(0.88rem,1.4vw,1.05rem);
+  flex-shrink:0;
 }
-.s7-student span { color:var(--coral); font-weight:700; }
-
-.s7-footer {
-  text-align:center; border-top:1px solid var(--divider);
-  padding-top:clamp(0.64rem,1.2vw,0.9rem); margin-top:var(--egap);
-  font-size:clamp(0.79rem,1.3vw,0.9rem); color:var(--muted); line-height:1.6;
-}
-.s7-footer em { color:var(--coral); font-style:normal; }
 
 /* ============================================================
-   SLIDE 6 — RECOVERY STAGE
+   SLIDE 6 — FINANCE IS CLOSE (icon map with 나 hub)
    ============================================================ */
-.s6 { background:var(--bg-navy); }
+.s6 { background:var(--bg-light); color:var(--text-dark); }
+.s6 .slide-content { justify-content:center; }
+.s6-body { display:flex; justify-content:center; }
 
-.s6-layout { display:grid; grid-template-columns:1fr 2fr; gap:var(--gap); align-items:center; }
-@media(max-width:700px){ .s6-layout{ grid-template-columns:1fr; } }
-
-/* 왼쪽: 사이클 시각화 */
-.s6-cycle { display:flex; flex-direction:column; gap:0.3rem; }
-.s6-step {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:8px; padding:0.55em 1em;
-  font-size:clamp(0.82rem,1.3vw,0.9rem); color:var(--light);
-  display:flex; align-items:center; gap:0.5em;
+.s6-map {
+  position:relative;
+  width:min(34rem,90vw);
+  aspect-ratio: 5 / 3;
 }
-.s6-step.active {
-  border-color:rgba(255,107,53,0.45);
-  background:rgba(255,107,53,0.1); color:var(--coral); font-weight:700;
+.s6-me {
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:clamp(3rem,6vw,4.5rem);
+  height:clamp(3rem,6vw,4.5rem);
+  border-radius:50%;
+  background:var(--deep-navy); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:clamp(0.88rem,1.4vw,1.05rem);
+  z-index:3;
 }
-.s6-arrow { text-align:center; color:var(--muted); font-size:0.75rem; margin:0.05rem 0; }
-
-/* 오른쪽: 카드들 */
-.s6-right { display:flex; flex-direction:column; gap:var(--egap); }
-
-.s6-card {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:10px; padding:clamp(0.84rem,1.8vw,1.2rem);
+.s6-item {
+  position:absolute;
+  display:flex; flex-direction:column; align-items:center; gap:0.35em;
+  z-index:2;
 }
-.s6-card-label { font-size:var(--small-size); color:var(--light); font-weight:700; margin-bottom:0.4em; }
-.s6-card-text  { font-size:clamp(0.84rem,1.35vw,0.95rem); color:var(--light); line-height:1.65; }
-.s6-card-text strong { color:var(--white); }
-.s6-card-text .tl { color:var(--teal); font-weight:700; }
-
-.s6-quote {
-  background:linear-gradient(135deg,rgba(78,205,196,0.07),rgba(255,107,53,0.05));
-  border-left:3px solid var(--teal); border-radius:0 10px 10px 0;
-  padding:clamp(0.84rem,1.8vw,1.1rem);
-  font-size:clamp(0.88rem,1.5vw,1rem); color:var(--white);
-  font-weight:600; line-height:1.6;
+.s6-item-icon {
+  width:clamp(2.5rem,4.8vw,3.4rem);
+  height:clamp(2.5rem,4.8vw,3.4rem);
+  border-radius:50%;
+  background:var(--bg-soft);
+  border:1.5px solid var(--accent-blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(1rem,1.7vw,1.3rem);
 }
-.s6-quote em { color:var(--teal); font-style:normal; }
-
-.s6-summary {
-  background:linear-gradient(135deg,rgba(255,107,53,0.09),rgba(78,205,196,0.09));
-  border:1px solid rgba(255,107,53,0.2); border-radius:10px;
-  padding:clamp(0.84rem,1.8vw,1.1rem);
-  font-size:clamp(0.82rem,1.4vw,0.97rem); color:var(--light);
-  font-weight:500; line-height:1.6; text-align:center;
+.s6-item-label {
+  font-size:clamp(0.75rem,1.1vw,0.88rem);
+  color:var(--text-dark); font-weight:500; text-align:center;
 }
-.s6-summary strong { color:var(--coral); }
+/* Pentagon positions — top, upper-right, lower-right, lower-left, upper-left */
+.s6-item-1 { top:0; left:50%; transform:translateX(-50%); }
+.s6-item-2 { top:32%; right:2%; }
+.s6-item-3 { bottom:0; right:20%; }
+.s6-item-4 { bottom:0; left:20%; }
+.s6-item-5 { top:32%; left:2%; }
 
 /* ============================================================
-   SLIDE 5 — GROWTH & TRADE RISK
+   SLIDE 7 — DOMAINS OF FINANCE (circular wheel)
    ============================================================ */
-.s5 { background:var(--bg-deep); }
+.s7 { background:var(--bg-light); color:var(--text-dark); }
+.s7 .slide-content { justify-content:center; }
+.s7-body { display:flex; justify-content:center; }
 
-.s5-cols { display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); }
-@media(max-width:680px){ .s5-cols{ grid-template-columns:1fr; } }
-
-.s5-panel {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:12px; padding:clamp(0.9rem,2vw,1.5rem);
-  display:flex; flex-direction:column; gap:0.6em;
+.s7-wheel {
+  position:relative;
+  width:min(38rem,92vw);
+  aspect-ratio: 5 / 3;
 }
-.s5-panel-icon { font-size:clamp(1.4rem,2.5vw,1.8rem); }
-.s5-panel-title { font-size:clamp(0.9rem,2vw,1.2rem); font-weight:700; color:var(--white); }
-
-.s5-items { list-style:none; display:flex; flex-direction:column; gap:0.35em; }
-.s5-items li {
-  font-size:clamp(0.82rem,1.3vw,0.92rem); color:var(--light);
-  display:flex; align-items:flex-start; gap:0.45em; line-height:1.5;
+.s7-center {
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:clamp(4rem,7vw,5.5rem);
+  height:clamp(4rem,7vw,5.5rem);
+  border-radius:50%;
+  background:var(--deep-navy); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:clamp(1rem,1.5vw,1.2rem);
+  z-index:3;
 }
-.s5-items li::before { content:'·'; color:var(--coral); font-size:1.4em; line-height:0.85; flex-shrink:0; }
-
-.s5-divider { width:100%; height:1px; background:var(--divider); }
-
-.s5-note {
-  font-size:clamp(0.76rem,1.1vw,0.82rem); color:var(--muted); line-height:1.6;
+.s7-branch {
+  position:absolute;
+  background:var(--bg-soft); border:1.5px solid var(--line-light);
+  border-radius:12px;
+  padding:clamp(0.55rem,1.2vw,0.9rem) clamp(0.7rem,1.5vw,1.1rem);
+  display:flex; align-items:center; gap:0.55rem;
+  font-size:clamp(0.78rem,1.2vw,0.95rem);
+  color:var(--deep-navy); font-weight:500;
+  white-space:nowrap;
 }
-.s5-note strong { color:var(--light); }
-
-.s5-key {
-  font-size:clamp(0.82rem,1.4vw,0.95rem); color:var(--coral);
-  font-weight:700; font-style:italic; line-height:1.45;
-  margin-top:auto; padding-top:0.4em;
+.s7-branch-icon { font-size:clamp(1rem,1.5vw,1.25rem); }
+.s7-branch.focus {
+  border-color:var(--accent-green);
+  background:rgba(47,133,90,0.09);
+  color:var(--accent-green); font-weight:700;
 }
+/* Pentagon positions */
+.s7-b1 { top:0; left:50%; transform:translateX(-50%); }
+.s7-b2 { top:30%; right:0; }
+.s7-b3 { bottom:0; right:18%; }
+.s7-b4 { bottom:0; left:18%; }
+.s7-b5 { top:30%; left:0; }
 
 /* ============================================================
    SHARED — tags (still used by slides 5, 6 for now)
@@ -835,210 +832,121 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 </section>
 
 <!-- ============================================================
-     SLIDE 5 — GROWTH & TRADE RISK
+     SLIDE 5 — WHAT IS FINANCE (centered, bidirectional connection)
      ============================================================ -->
 <section class="slide s5" id="slide-5">
-  <div class="bg-grid"></div>
-  <div class="glow glow-coral" style="width:36vw;height:36vw;top:15%;left:-5%;opacity:0.5;"></div>
-
   <div class="slide-content">
-    <div class="s4-tags reveal">
-      <span class="tag tag-teal">🌿 그린팩</span>
-      <span class="tag tag-coral">성장 · 거래처 리스크</span>
-    </div>
+    <h2 class="deck-title reveal" style="text-align:center;">금융은 무엇일까?</h2>
 
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:clamp(1.1rem,3vw,2rem);margin-bottom:var(--gap);" class="reveal">
-      잘될수록 더 필요해지는 금융
-    </h2>
+    <div class="deck-body">
+      <div class="s5-body">
+        <div class="s5-def reveal">
+          <div>돈이 필요한 곳과</div>
+          <div>돈이 있는 곳을 <em>연결해</em></div>
+          <div>필요한 일을 가능하게 만드는 기능</div>
+        </div>
 
-    <div class="s5-cols">
-      <!-- 성장 단계 -->
-      <div class="s5-panel reveal">
-        <div class="s5-panel-icon">📈</div>
-        <div class="s5-panel-title">성장 단계</div>
-        <ul class="s5-items">
-          <li>첫 거래처 확보, 주문 증가</li>
-          <li>생산설비 투자 필요</li>
-          <li>성장은 자동으로 현금을 가져오지 않음</li>
-          <li>설비·인력·원재료가 먼저 필요</li>
-        </ul>
-        <div class="s5-divider"></div>
-        <p class="s5-note">
-          <strong>신보 보증 절차:</strong><br>
-          보증신청·상담 → 자료수집·신용조사 → 보증심사·승인 → 보증서 발급<br>
-          <em style="color:var(--muted);">(신규기업은 영업점 방문상담이 기본)</em>
-        </p>
-        <div class="s5-key">"회사는 망할 때만 돈이 필요한 게 아니라,<br>잘될 때도 자금이 필요하다."</div>
-      </div>
-
-      <!-- 거래처 리스크 -->
-      <div class="s5-panel reveal">
-        <div class="s5-panel-icon">⚠️</div>
-        <div class="s5-panel-title">거래처 리스크</div>
-        <ul class="s5-items">
-          <li>외상매출 증가, 거래처 확대</li>
-          <li>주요 거래처 부실 위험</li>
-          <li>매출과 현금은 다르다</li>
-          <li>'잘 파는 것'과 '안전하게 받는 것'은 별개</li>
-        </ul>
-        <div class="s5-divider"></div>
-        <p class="s5-note">
-          <strong>매출채권보험:</strong><br>
-          판매기업이 취득한 매출채권에 대해 구매기업의
-          <em style="color:var(--muted);">지급불능·채무불이행</em> 발생 시 손실을 보전하는 제도
-        </p>
-        <div class="s5-key">"회사는 제품만 잘 만들어서 사는 게 아니라,<br>돈을 안전하게 받는 구조도 중요하다."</div>
+        <!-- 양방향 연결형 인포그래픽 -->
+        <div class="s5-connect reveal" aria-hidden="true">
+          <div class="s5-side">
+            <div class="s5-side-icon">🏢</div>
+            <div class="s5-side-label">돈이 필요한 곳</div>
+            <div class="s5-side-sub">기업 · 개인</div>
+          </div>
+          <div class="s5-arrow">↔</div>
+          <div class="s5-middle">금융</div>
+          <div class="s5-arrow">↔</div>
+          <div class="s5-side">
+            <div class="s5-side-icon">💰</div>
+            <div class="s5-side-label">돈이 있는 곳</div>
+            <div class="s5-side-sub">예금자 · 투자자</div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <p class="deck-takeaway reveal">금융은 돈 자체보다 <strong>'연결'</strong>에 가깝다.</p>
   </div>
-  <span class="slide-num">05 / 09</span>
 </section>
 
 <!-- ============================================================
-     SLIDE 6 — RECOVERY STAGE
+     SLIDE 6 — FINANCE IS CLOSE (icon map with 나 hub)
      ============================================================ -->
 <section class="slide s6" id="slide-6">
-  <div class="bg-grid"></div>
-  <div class="glow glow-teal" style="width:36vw;height:36vw;bottom:-8%;left:-5%;opacity:0.6;"></div>
-
   <div class="slide-content">
-    <div class="s4-tags reveal">
-      <span class="tag tag-teal">🌿 그린팩</span>
-      <span class="tag tag-coral">재기 단계</span>
-    </div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:clamp(1.1rem,3vw,2rem);margin-bottom:var(--gap);" class="reveal">
-      그린팩이 다시 일어서려면
-    </h2>
+    <h2 class="deck-title reveal" style="text-align:center;">금융은 생각보다 가까이에 있다</h2>
 
-    <div class="s6-layout">
-      <!-- 사이클 -->
-      <div class="s6-cycle reveal">
-        <div class="s6-step">🌱 시작</div>
-        <div class="s6-arrow">↓</div>
-        <div class="s6-step">📈 성장</div>
-        <div class="s6-arrow">↓</div>
-        <div class="s6-step">⚠️ 위기</div>
-        <div class="s6-arrow">↓</div>
-        <div class="s6-step active">🔄 재기 ← 신보</div>
-      </div>
+    <div class="deck-body">
+      <div class="s6-body">
+        <div class="s6-map reveal" aria-hidden="true">
+          <div class="s6-me">나</div>
 
-      <!-- 내용 카드 -->
-      <div class="s6-right">
-        <div class="s6-card reveal">
-          <div class="s6-card-label">📍 상황</div>
-          <p class="s6-card-text">
-            경기 악화나 거래처 문제로 회사가 흔들림.
-            <strong>구조조정, 회복, 재창업</strong>의 갈림길.
-          </p>
-        </div>
-
-        <div class="s6-card reveal">
-          <div class="s6-card-label">🏢 재기지원단</div>
-          <p class="s6-card-text">
-            신보 영업조직에는 <span class="tl">재기지원단</span>이 포함되어 있으며,
-            실패를 끝으로 보지 않고 <strong>회복 가능성을 연결</strong>하는 역할을 합니다.<br>
-            <small style="color:var(--muted);">9영업본부 · 110영업점 · 15재기지원단 · 11채권관리단</small>
-          </p>
-        </div>
-
-        <div class="s6-quote reveal">
-          "한 번 흔들렸다고 끝이 아니라,<br>
-          <em>다시 일어설 기회를 연결</em>하는 역할도 있다."
-        </div>
-
-        <div class="s6-summary reveal">
-          신보는 한 회사를 <strong>태어나게</strong> 하고, <strong>키우고</strong>,
-          <strong>지키고</strong>, <strong>다시 일어설 수 있게</strong> 돕는 금융입니다.
+          <div class="s6-item s6-item-1">
+            <div class="s6-item-icon">💳</div>
+            <div class="s6-item-label">체크카드</div>
+          </div>
+          <div class="s6-item s6-item-2">
+            <div class="s6-item-icon">📱</div>
+            <div class="s6-item-label">휴대폰 할부</div>
+          </div>
+          <div class="s6-item s6-item-3">
+            <div class="s6-item-icon">🛡️</div>
+            <div class="s6-item-label">보험</div>
+          </div>
+          <div class="s6-item s6-item-4">
+            <div class="s6-item-icon">⚠️</div>
+            <div class="s6-item-label">금융사기 예방</div>
+          </div>
+          <div class="s6-item s6-item-5">
+            <div class="s6-item-icon">💰</div>
+            <div class="s6-item-label">용돈 관리</div>
+          </div>
         </div>
       </div>
     </div>
+
+    <p class="deck-takeaway reveal">금융은 나중의 이야기가 아니라, <strong>이미 시작된 이야기</strong>다.</p>
   </div>
-  <span class="slide-num">06 / 09</span>
 </section>
 
 <!-- ============================================================
-     SLIDE 7 — ROLES WITHIN SINBO
+     SLIDE 7 — DOMAINS OF FINANCE (circular wheel)
      ============================================================ -->
 <section class="slide s7" id="slide-7">
-  <div class="bg-grid"></div>
-
   <div class="slide-content">
-    <div class="section-label reveal">Part 3 · 신보 안의 사람들</div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
-      신보 안의 다양한 역할
-    </h2>
+    <h2 class="deck-title reveal" style="text-align:center;">금융에는 어떤 분야가 있을까?</h2>
 
-    <div class="s7-grid">
-      <!-- 영업점 -->
-      <div class="s7-card reveal">
-        <div class="s7-icon ic1">🏪</div>
-        <div class="s7-name">일반영업점</div>
-        <div class="s7-desc">기업을 가장 가까이에서 만나는 곳</div>
-        <ul class="s7-traits">
-          <li>상담·기업 상황 파악·자료 검토</li>
-          <li>신용조사·보증심사의 출발점</li>
-          <li>끝까지 듣는 사람</li>
-          <li>숫자와 사람을 같이 보는 사람</li>
-        </ul>
-        <div class="s7-student">
-          <span>학생 연결:</span> 발표 때 결론 먼저 · 상대가 이해하게 설명 · 조별과제 끝까지
-        </div>
-      </div>
+    <div class="deck-body">
+      <div class="s7-body">
+        <div class="s7-wheel reveal" aria-hidden="true">
+          <div class="s7-center">금융</div>
 
-      <!-- 신용보험센터 -->
-      <div class="s7-card reveal">
-        <div class="s7-icon ic2">🛡️</div>
-        <div class="s7-name">신용보험센터</div>
-        <div class="s7-desc">거래가 끝까지 안전하게 마무리되도록 지키는 곳</div>
-        <ul class="s7-traits">
-          <li>매출채권보험 안내·운영</li>
-          <li>거래처 리스크 관리</li>
-          <li>꼼꼼하고 이상신호 놓치지 않는 사람</li>
-          <li>숫자 뒤 의미를 읽는 사람</li>
-        </ul>
-        <div class="s7-student">
-          <span>학생 연결:</span> 결과보다 원인 보기 · 작은 실수 넘기지 않기 · 이상 부분 찾는 연습
-        </div>
-      </div>
-
-      <!-- 재기지원단 -->
-      <div class="s7-card reveal">
-        <div class="s7-icon ic3">🔄</div>
-        <div class="s7-name">재기지원단</div>
-        <div class="s7-desc">어려움을 겪은 기업이 다시 일어설 기회를 돕는 곳</div>
-        <ul class="s7-traits">
-          <li>회복 가능성을 보는 역할</li>
-          <li>재기·회복 경로 연결</li>
-          <li>사람을 단편적으로 보지 않는 사람</li>
-          <li>긴 호흡으로 문제를 보는 사람</li>
-        </ul>
-        <div class="s7-student">
-          <span>학생 연결:</span> 실수 하나로 사람 전체 판단하지 않기 · 실패 경험 다시 정리 · 빨리 단정하지 않기
-        </div>
-      </div>
-
-      <!-- 본점 -->
-      <div class="s7-card reveal">
-        <div class="s7-icon ic4">🏛️</div>
-        <div class="s7-name">본점</div>
-        <div class="s7-desc">현장이 잘 움직이도록 제도와 시스템을 설계하는 곳</div>
-        <ul class="s7-traits">
-          <li>4부문 16부 6실 운영</li>
-          <li>전체 기준·시스템 설계</li>
-          <li>큰 그림을 보는 사람</li>
-          <li>데이터로 개선점을 찾는 사람</li>
-        </ul>
-        <div class="s7-student">
-          <span>학생 연결:</span> 눈앞 문제보다 구조 보기 · 반복 문제 원인 생각 · 자료 정리해 기준 세우기
+          <div class="s7-branch s7-b1">
+            <span class="s7-branch-icon">💰</span>
+            <span>저축과 자산관리</span>
+          </div>
+          <div class="s7-branch s7-b2 focus">
+            <span class="s7-branch-icon">💳</span>
+            <span>대출과 신용</span>
+          </div>
+          <div class="s7-branch s7-b3">
+            <span class="s7-branch-icon">🛡️</span>
+            <span>보험</span>
+          </div>
+          <div class="s7-branch s7-b4">
+            <span class="s7-branch-icon">📈</span>
+            <span>투자</span>
+          </div>
+          <div class="s7-branch s7-b5 focus">
+            <span class="s7-branch-icon">🏢</span>
+            <span>기업금융</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="s7-footer reveal">
-      "자리마다 역할은 달라도, <em>사람과 문제를 이해하는 힘</em>은 같다."
-    </div>
+    <p class="deck-takeaway reveal">오늘 더 자세히 볼 것은 <strong>'신용'과 '기업금융'</strong>이다.</p>
   </div>
-  <span class="slide-num">07 / 09</span>
 </section>
 
 <!-- ============================================================
