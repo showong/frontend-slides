@@ -321,6 +321,215 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 }
 
 /* ============================================================
+   SHARED — 3 COLUMN PROBLEM / ROLE / ORG PATTERN (used by s12, s14)
+   ============================================================ */
+.deck-3col {
+  display:grid;
+  grid-template-columns:1fr auto 1.15fr auto 1fr;
+  align-items:stretch;
+  gap:clamp(0.5rem,1vw,0.9rem);
+  max-width:min(66rem,94vw);
+  margin:0 auto;
+}
+.deck-3col-col {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:14px;
+  padding:clamp(1.1rem,2.2vw,1.75rem) clamp(0.9rem,1.8vw,1.5rem);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+}
+.deck-3col-col.problem { border-color:rgba(43,108,176,0.35); background:rgba(43,108,176,0.05); }
+.deck-3col-col.role    { border-color:var(--accent-green); background:rgba(47,133,90,0.08); }
+.deck-3col-col.org     { border-color:var(--line-light); }
+.deck-3col-label {
+  font-size:clamp(0.7rem,1.05vw,0.82rem);
+  font-weight:700; letter-spacing:0.14em;
+  color:var(--text-muted); text-transform:uppercase;
+  margin-bottom:clamp(0.6rem,1.3vw,0.95rem);
+}
+.deck-3col-col.problem .deck-3col-label { color:var(--accent-blue); }
+.deck-3col-col.role    .deck-3col-label { color:var(--accent-green); }
+.deck-3col-content {
+  font-size:clamp(0.9rem,1.45vw,1.08rem);
+  color:var(--deep-navy); font-weight:600;
+  line-height:1.6;
+}
+.deck-3col-content strong { color:var(--accent-green); font-weight:800; }
+.deck-3col-col.problem .deck-3col-content strong { color:var(--accent-blue); }
+.deck-3col-content .sub {
+  display:block; margin-top:0.5em;
+  font-size:clamp(0.78rem,1.15vw,0.92rem);
+  color:var(--text-muted); font-weight:500;
+}
+.deck-3col-arrow {
+  align-self:center;
+  font-size:clamp(1.1rem,1.9vw,1.5rem);
+  color:var(--text-muted); font-weight:700;
+}
+
+/* ============================================================
+   SLIDE 11 — GREENPACK START (strengths / company / barriers)
+   ============================================================ */
+.s11 { background:var(--bg-light); color:var(--text-dark); }
+.s11 .slide-content { justify-content:center; }
+
+.s11-compare {
+  display:grid;
+  grid-template-columns:1fr 1.15fr 1fr;
+  gap:clamp(0.7rem,1.5vw,1.2rem);
+  align-items:stretch;
+  max-width:min(64rem,94vw); margin:0 auto;
+}
+.s11-col {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:14px;
+  padding:clamp(1.1rem,2.2vw,1.7rem) clamp(0.9rem,1.8vw,1.4rem);
+  display:flex; flex-direction:column;
+}
+.s11-col.strength { border-color:var(--accent-green); background:rgba(47,133,90,0.07); }
+.s11-col.barrier  { border-color:rgba(43,108,176,0.35); background:rgba(43,108,176,0.05); }
+.s11-col-head {
+  font-size:clamp(0.85rem,1.35vw,1.05rem);
+  font-weight:800; letter-spacing:0.1em;
+  margin-bottom:clamp(0.7rem,1.5vw,1.1rem);
+  text-align:center;
+}
+.s11-col.strength .s11-col-head { color:var(--accent-green); }
+.s11-col.barrier  .s11-col-head { color:var(--accent-blue); }
+.s11-list {
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-direction:column;
+  gap:clamp(0.5rem,1vw,0.8rem);
+}
+.s11-list li {
+  font-size:clamp(0.88rem,1.4vw,1.05rem);
+  color:var(--deep-navy); font-weight:600;
+  line-height:1.5;
+  padding-left:1.1em; position:relative;
+}
+.s11-list li::before {
+  content:""; position:absolute; left:0; top:0.55em;
+  width:0.45em; height:0.45em; border-radius:50%;
+  background:var(--text-muted);
+}
+.s11-col.strength .s11-list li::before { background:var(--accent-green); }
+.s11-col.barrier  .s11-list li::before { background:var(--accent-blue); }
+
+.s11-center {
+  background:#fff;
+  border:2px solid var(--deep-navy);
+  border-radius:16px;
+  padding:clamp(1.3rem,2.5vw,2rem) clamp(1rem,2vw,1.6rem);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(10,31,68,0.08);
+}
+.s11-center-label {
+  font-size:clamp(0.7rem,1.05vw,0.82rem);
+  font-weight:700; letter-spacing:0.14em;
+  color:var(--text-muted); text-transform:uppercase;
+  margin-bottom:clamp(0.4rem,0.9vw,0.65rem);
+}
+.s11-center-name {
+  font-size:clamp(1.3rem,2.5vw,1.9rem);
+  font-weight:900; color:var(--deep-navy);
+  margin-bottom:clamp(0.45rem,1vw,0.7rem);
+}
+.s11-center-desc {
+  font-size:clamp(0.85rem,1.3vw,1rem);
+  color:var(--text-muted); font-weight:500;
+  line-height:1.55;
+}
+
+/* ============================================================
+   SLIDE 13 — GREENPACK GROWTH (5-step vertical flow)
+   ============================================================ */
+.s13 { background:var(--bg-light); color:var(--text-dark); }
+.s13 .slide-content { justify-content:center; }
+
+.s13-flow {
+  display:flex; flex-direction:column;
+  align-items:center; gap:0;
+  max-width:min(34rem,86vw); margin:0 auto;
+}
+.s13-step {
+  width:100%;
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:12px;
+  padding:clamp(0.7rem,1.5vw,1.05rem) clamp(1rem,2.2vw,1.6rem);
+  display:flex; align-items:center;
+  gap:clamp(0.8rem,1.6vw,1.2rem);
+}
+.s13-step-num {
+  font-size:clamp(0.68rem,1vw,0.8rem);
+  color:var(--text-muted); font-weight:800;
+  letter-spacing:0.14em;
+  flex-shrink:0;
+}
+.s13-step-text {
+  font-size:clamp(0.95rem,1.55vw,1.15rem);
+  color:var(--deep-navy); font-weight:700;
+  line-height:1.4;
+}
+.s13-step.highlight {
+  border-color:var(--accent-green);
+  background:rgba(47,133,90,0.08);
+}
+.s13-step.highlight .s13-step-num { color:var(--accent-green); }
+.s13-step.highlight .s13-step-text { color:var(--accent-green); }
+.s13-arrow {
+  font-size:clamp(0.9rem,1.6vw,1.25rem);
+  color:var(--text-muted);
+  padding:clamp(0.15rem,0.35vw,0.28rem) 0;
+}
+
+/* ============================================================
+   SLIDE 15 — GREENPACK TRADE RISK (3 warning cards)
+   ============================================================ */
+.s15 { background:var(--bg-light); color:var(--text-dark); }
+.s15 .slide-content { justify-content:center; }
+
+.s15-cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(0.9rem,1.8vw,1.4rem);
+  max-width:min(64rem,94vw); margin:0 auto;
+}
+.s15-card {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:14px;
+  padding:clamp(1.2rem,2.4vw,1.8rem) clamp(1rem,2vw,1.5rem);
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  gap:clamp(0.5rem,1vw,0.85rem);
+}
+.s15-card.risk {
+  border-color:var(--accent-blue);
+  background:rgba(43,108,176,0.07);
+}
+.s15-icon {
+  font-size:clamp(1.6rem,2.8vw,2.15rem);
+  line-height:1;
+}
+.s15-label {
+  font-size:clamp(1rem,1.6vw,1.2rem);
+  font-weight:800;
+  color:var(--deep-navy);
+}
+.s15-card.risk .s15-label { color:var(--accent-blue); }
+.s15-desc {
+  font-size:clamp(0.84rem,1.3vw,0.98rem);
+  color:var(--text-muted); font-weight:500;
+  line-height:1.55;
+}
+
+/* ============================================================
    SLIDE 5 — WHAT IS FINANCE (centered, bidirectional connection)
    ============================================================ */
 .s5 { background:var(--bg-light); color:var(--text-dark); }
@@ -1134,6 +1343,194 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
     </div>
 
     <p class="deck-takeaway reveal">부족한 가능성을 만드는 게 아니라,<br><strong>보이지 않던 가능성을 연결하는 것</strong>이다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 — GREENPACK START (strengths / company / barriers)
+     ============================================================ -->
+<section class="slide s11" id="slide-11">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">그린팩의 시작: 왜 바로 출발하기 어려울까?</h2>
+
+    <div class="deck-body">
+      <div class="s11-compare reveal">
+        <div class="s11-col strength">
+          <div class="s11-col-head">강점</div>
+          <ul class="s11-list">
+            <li>친환경 포장재 기술</li>
+            <li>창업자의 아이디어</li>
+            <li>빠르게 커지는 시장성</li>
+          </ul>
+        </div>
+        <div class="s11-center">
+          <div class="s11-center-label">기업 프로필</div>
+          <div class="s11-center-name">그린팩</div>
+          <div class="s11-center-desc">친환경 포장재를 만드는<br>창업 초기 기업</div>
+        </div>
+        <div class="s11-col barrier">
+          <div class="s11-col-head">장벽</div>
+          <ul class="s11-list">
+            <li>매출·영업 실적 부족</li>
+            <li>담보로 제공할 자산 부족</li>
+            <li>시장에서 쌓은 신뢰 부족</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">창업 초기 기업은 가능성보다 <strong>'증명된 기록'</strong>이 부족할 수 있다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 — SINBO STARTUP SUPPORT (problem / role / org)
+     ============================================================ -->
+<section class="slide s12" id="slide-12">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">신보는 어떻게 회사를 돕는가 ① 창업지원</h2>
+
+    <div class="deck-body">
+      <div class="deck-3col reveal">
+        <div class="deck-3col-col problem">
+          <div class="deck-3col-label">문제</div>
+          <div class="deck-3col-content">
+            신뢰와 기록이 부족해<br>
+            자금 조달이 어렵다
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col role">
+          <div class="deck-3col-label">신보의 역할</div>
+          <div class="deck-3col-content">
+            창업 초기 기업에<br>
+            <strong>보증 공급</strong>과<br>
+            <strong>신용 연결</strong>
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col org">
+          <div class="deck-3col-label">연결되는 조직</div>
+          <div class="deck-3col-content">
+            <strong>일반영업점</strong>
+            <span class="sub">현장에서 창업 초기 기업을<br>직접 상담·심사</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">신보는 <strong>가능성 있는 기업</strong>이 출발선에 설 수 있도록 돕는다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 — GREENPACK GROWTH (5-step vertical flow)
+     ============================================================ -->
+<section class="slide s13" id="slide-13">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">그린팩의 성장: 잘될수록 왜 돈이 더 필요할까?</h2>
+
+    <div class="deck-body">
+      <div class="s13-flow reveal">
+        <div class="s13-step">
+          <span class="s13-step-num">01</span>
+          <span class="s13-step-text">주문이 늘어난다</span>
+        </div>
+        <div class="s13-arrow">↓</div>
+        <div class="s13-step">
+          <span class="s13-step-num">02</span>
+          <span class="s13-step-text">설비를 늘려야 한다</span>
+        </div>
+        <div class="s13-arrow">↓</div>
+        <div class="s13-step">
+          <span class="s13-step-num">03</span>
+          <span class="s13-step-text">인력을 더 뽑아야 한다</span>
+        </div>
+        <div class="s13-arrow">↓</div>
+        <div class="s13-step">
+          <span class="s13-step-num">04</span>
+          <span class="s13-step-text">원재료를 먼저 사야 한다</span>
+        </div>
+        <div class="s13-arrow">↓</div>
+        <div class="s13-step highlight">
+          <span class="s13-step-num">05</span>
+          <span class="s13-step-text">자금 수요가 크게 늘어난다</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">성장은 <strong>자동으로 현금을 가져오지 않는다</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 — SINBO GROWTH SUPPORT (problem / role / org)
+     ============================================================ -->
+<section class="slide s14" id="slide-14">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">신보는 어떻게 회사를 돕는가 ② 성장지원</h2>
+
+    <div class="deck-body">
+      <div class="deck-3col reveal">
+        <div class="deck-3col-col problem">
+          <div class="deck-3col-label">문제</div>
+          <div class="deck-3col-content">
+            성장하려면 먼저<br>
+            많은 자금이 필요하다
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col role">
+          <div class="deck-3col-label">신보의 역할</div>
+          <div class="deck-3col-content">
+            성장 단계 기업에<br>
+            <strong>추가 보증</strong>과<br>
+            <strong>지속적 신용 연결</strong>
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col org">
+          <div class="deck-3col-label">연결되는 조직</div>
+          <div class="deck-3col-content">
+            <strong>일반영업점 +<br>성장지원 담당</strong>
+            <span class="sub">규모 성장에 맞는<br>자금·신용 지원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">회사는 <strong>망할 때만 돈이 필요한 게 아니다</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 15 — GREENPACK TRADE RISK (3 warning cards)
+     ============================================================ -->
+<section class="slide s15" id="slide-15">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">그린팩의 거래: 많이 팔아도 왜 위험할까?</h2>
+
+    <div class="deck-body">
+      <div class="s15-cards reveal">
+        <div class="s15-card">
+          <div class="s15-icon">⚠️</div>
+          <div class="s15-label">외상매출 증가</div>
+          <div class="s15-desc">판매는 늘지만<br>현금이 늦게 들어온다</div>
+        </div>
+        <div class="s15-card">
+          <div class="s15-icon">⚠️</div>
+          <div class="s15-label">거래처 확대</div>
+          <div class="s15-desc">새 거래처가 늘수록<br>확인이 어려워진다</div>
+        </div>
+        <div class="s15-card risk">
+          <div class="s15-icon">⚠️</div>
+          <div class="s15-label">거래처 부실 위험</div>
+          <div class="s15-desc">받지 못하면<br>흑자여도 무너질 수 있다</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal"><strong>잘 파는 것</strong>과 <strong>안전하게 받는 것</strong>은 다르다.</p>
   </div>
 </section>
 
