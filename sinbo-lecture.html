@@ -530,6 +530,210 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 }
 
 /* ============================================================
+   SLIDE 16 — SINBO TRADE PROTECTION (accounts-receivable insurance)
+   ============================================================ */
+.s16 { background:var(--bg-light); color:var(--text-dark); }
+.s16 .slide-content { justify-content:center; }
+
+/* shield decoration on the role column for s16 */
+.deck-3col-col.shield {
+  border-color:var(--accent-green);
+  background:rgba(47,133,90,0.08);
+  position:relative;
+}
+.deck-3col-col.shield::before {
+  content:"🛡️";
+  position:absolute;
+  top:clamp(-1.2rem,-2vw,-0.8rem);
+  left:50%; transform:translateX(-50%);
+  font-size:clamp(1.3rem,2.2vw,1.7rem);
+  line-height:1;
+}
+
+/* ============================================================
+   SLIDE 17 — GREENPACK CRISIS (forked-path infographic)
+   ============================================================ */
+.s17 { background:var(--bg-light); color:var(--text-dark); }
+.s17 .slide-content { justify-content:center; }
+
+.s17-layout {
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  grid-template-rows:auto auto;
+  gap:clamp(0.6rem,1.2vw,0.95rem) clamp(0.9rem,1.8vw,1.4rem);
+  align-items:center;
+  max-width:min(62rem,94vw); margin:0 auto;
+}
+.s17-crisis {
+  grid-column:1; grid-row:1 / 3;
+  background:rgba(43,108,176,0.06);
+  border:1.5px solid rgba(43,108,176,0.35);
+  border-radius:14px;
+  padding:clamp(1.2rem,2.3vw,1.8rem) clamp(1rem,2vw,1.5rem);
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  gap:clamp(0.6rem,1.2vw,0.9rem);
+}
+.s17-crisis-icon { font-size:clamp(1.8rem,3vw,2.4rem); line-height:1; }
+.s17-crisis-title {
+  font-size:clamp(0.95rem,1.55vw,1.15rem);
+  font-weight:800; color:var(--accent-blue);
+}
+.s17-crisis-items {
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-direction:column; gap:0.45em;
+}
+.s17-crisis-items li {
+  font-size:clamp(0.85rem,1.35vw,1rem);
+  color:var(--deep-navy); font-weight:600;
+  line-height:1.4;
+}
+
+.s17-mid {
+  grid-column:2; grid-row:1 / 3;
+  display:flex; flex-direction:column;
+  align-items:center; gap:clamp(0.5rem,1vw,0.8rem);
+}
+.s17-mid-label {
+  font-size:clamp(0.82rem,1.3vw,1rem);
+  font-weight:800; color:var(--text-muted);
+  writing-mode:vertical-rl; text-orientation:mixed;
+  letter-spacing:0.08em;
+}
+.s17-mid-arrow {
+  font-size:clamp(1rem,1.7vw,1.4rem);
+  color:var(--text-muted);
+}
+
+.s17-outcome {
+  border-radius:14px;
+  padding:clamp(0.9rem,1.8vw,1.35rem) clamp(0.9rem,1.8vw,1.3rem);
+  display:flex; align-items:center;
+  gap:clamp(0.6rem,1.2vw,0.9rem);
+  font-size:clamp(0.9rem,1.45vw,1.08rem);
+  font-weight:700;
+}
+.s17-outcome.end {
+  grid-column:3; grid-row:1;
+  background:rgba(113,128,150,0.09);
+  border:1.5px solid var(--line-light);
+  color:var(--text-muted);
+}
+.s17-outcome.recover {
+  grid-column:3; grid-row:2;
+  background:rgba(47,133,90,0.08);
+  border:1.5px solid var(--accent-green);
+  color:var(--accent-green);
+}
+.s17-outcome-icon { font-size:clamp(1.2rem,2vw,1.6rem); flex-shrink:0; }
+
+/* ============================================================
+   SLIDE 18 — SINBO RECOVERY SUPPORT (3-col repeat)
+   ============================================================ */
+.s18 { background:var(--bg-light); color:var(--text-dark); }
+.s18 .slide-content { justify-content:center; }
+
+/* ============================================================
+   SLIDE 19 — SINBO ROLE MAP (2-row timeline)
+   ============================================================ */
+.s19 { background:var(--bg-light); color:var(--text-dark); }
+.s19 .slide-content { justify-content:center; }
+
+.s19-map {
+  display:flex; flex-direction:column;
+  gap:clamp(0.5rem,1vw,0.8rem);
+  max-width:min(72rem,96vw); margin:0 auto;
+}
+.s19-row {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(0.5rem,1vw,0.8rem);
+}
+.s19-row-label {
+  font-size:clamp(0.7rem,1.05vw,0.82rem);
+  font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--text-muted);
+  margin-bottom:clamp(0.35rem,0.8vw,0.6rem);
+  text-align:center;
+}
+.s19-cell {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:12px;
+  padding:clamp(0.75rem,1.5vw,1.1rem) clamp(0.7rem,1.4vw,1rem);
+  text-align:center;
+  position:relative;
+}
+.s19-row.company .s19-cell { border-color:rgba(43,108,176,0.3); background:rgba(43,108,176,0.05); }
+.s19-row.org     .s19-cell { border-color:var(--accent-green); background:rgba(47,133,90,0.07); }
+
+.s19-cell-num {
+  font-size:clamp(0.65rem,0.95vw,0.77rem);
+  font-weight:800; letter-spacing:0.12em;
+  color:var(--text-muted); margin-bottom:0.3em;
+}
+.s19-cell-name {
+  font-size:clamp(0.88rem,1.4vw,1.05rem);
+  font-weight:800; color:var(--deep-navy); line-height:1.35;
+}
+.s19-row.company .s19-cell-name { color:var(--accent-blue); }
+.s19-row.org     .s19-cell-name { color:var(--accent-green); }
+.s19-cell-sub {
+  display:block; margin-top:0.3em;
+  font-size:clamp(0.72rem,1.05vw,0.84rem);
+  color:var(--text-muted); font-weight:500;
+}
+
+.s19-connector {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:clamp(0.5rem,1vw,0.8rem);
+}
+.s19-connector-cell {
+  display:flex; justify-content:center;
+  font-size:clamp(0.9rem,1.6vw,1.2rem);
+  color:var(--text-muted);
+}
+
+/* ============================================================
+   SLIDE 20 — WHO IS IN SINBO (4-card competency grid)
+   ============================================================ */
+.s20 { background:var(--bg-light); color:var(--text-dark); }
+.s20 .slide-content { justify-content:center; }
+
+.s20-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(0.9rem,1.8vw,1.4rem);
+  max-width:min(56rem,92vw); margin:0 auto;
+}
+.s20-card {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:14px;
+  padding:clamp(1.2rem,2.4vw,1.8rem) clamp(1.2rem,2.3vw,1.75rem);
+  display:flex; align-items:flex-start;
+  gap:clamp(0.8rem,1.6vw,1.2rem);
+}
+.s20-card:nth-child(1) { border-color:var(--accent-blue); background:rgba(43,108,176,0.05); }
+.s20-card:nth-child(2) { border-color:var(--accent-green); background:rgba(47,133,90,0.06); }
+.s20-card:nth-child(3) { border-color:rgba(43,108,176,0.3); }
+.s20-card:nth-child(4) { border-color:rgba(47,133,90,0.35); }
+.s20-card-icon {
+  font-size:clamp(1.4rem,2.3vw,1.8rem);
+  line-height:1; flex-shrink:0;
+}
+.s20-card-body { display:flex; flex-direction:column; gap:0.3em; }
+.s20-card-title {
+  font-size:clamp(1rem,1.6vw,1.2rem);
+  font-weight:800; color:var(--deep-navy);
+}
+.s20-card-desc {
+  font-size:clamp(0.82rem,1.28vw,0.96rem);
+  color:var(--text-muted); font-weight:500;
+  line-height:1.5;
+}
+
+/* ============================================================
    SLIDE 5 — WHAT IS FINANCE (centered, bidirectional connection)
    ============================================================ */
 .s5 { background:var(--bg-light); color:var(--text-dark); }
@@ -1531,6 +1735,233 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
     </div>
 
     <p class="deck-takeaway reveal"><strong>잘 파는 것</strong>과 <strong>안전하게 받는 것</strong>은 다르다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 16 — SINBO TRADE PROTECTION (accounts-receivable insurance)
+     ============================================================ -->
+<section class="slide s16" id="slide-16">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">신보는 어떻게 회사를 돕는가 ③ 매출채권보험</h2>
+
+    <div class="deck-body">
+      <div class="deck-3col reveal">
+        <div class="deck-3col-col problem">
+          <div class="deck-3col-label">문제</div>
+          <div class="deck-3col-content">
+            거래처 지급불능 또는<br>
+            채무불이행 위험
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col shield">
+          <div class="deck-3col-label">신보의 역할</div>
+          <div class="deck-3col-content">
+            <strong>매출채권보험</strong><br>
+            손실 보전 및<br>
+            거래 안정성 보완
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col org">
+          <div class="deck-3col-label">연결되는 조직</div>
+          <div class="deck-3col-content">
+            <strong>신용보험센터</strong>
+            <span class="sub">판매기업의 손실을<br>직접 보전하는 창구</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">회사를 <strong>키우는 금융</strong>이면서, 동시에 회사를 <strong>지키는 금융</strong>이다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 17 — GREENPACK CRISIS (forked-path: end vs. recover)
+     ============================================================ -->
+<section class="slide s17" id="slide-17">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">그린팩의 위기: 한 번 흔들리면 끝일까?</h2>
+
+    <div class="deck-body">
+      <div class="s17-layout reveal">
+        <div class="s17-crisis">
+          <div class="s17-crisis-icon">⚡</div>
+          <div class="s17-crisis-title">위기 상황</div>
+          <ul class="s17-crisis-items">
+            <li>거래처 대금 미수</li>
+            <li>자금 압박 심화</li>
+            <li>회복과 재기의 갈림길</li>
+          </ul>
+        </div>
+
+        <div class="s17-mid">
+          <div class="s17-mid-arrow">→</div>
+          <div class="s17-mid-label">선택</div>
+          <div class="s17-mid-arrow">→</div>
+        </div>
+
+        <div class="s17-outcome end">
+          <div class="s17-outcome-icon">🚫</div>
+          그대로 폐업
+        </div>
+        <div class="s17-outcome recover">
+          <div class="s17-outcome-icon">🌱</div>
+          재기를 위한 지원 연결
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">위기는 끝이 아니라, <strong>다시 설 수 있는지의 문제</strong>일 수 있다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 18 — SINBO RECOVERY SUPPORT (problem / role / org)
+     ============================================================ -->
+<section class="slide s18" id="slide-18">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">신보는 어떻게 회사를 돕는가 ④ 재기지원</h2>
+
+    <div class="deck-body">
+      <div class="deck-3col reveal">
+        <div class="deck-3col-col problem">
+          <div class="deck-3col-label">문제</div>
+          <div class="deck-3col-content">
+            위기 기업의<br>
+            회복·재도전 필요
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col role">
+          <div class="deck-3col-label">신보의 역할</div>
+          <div class="deck-3col-content">
+            재기 경로 지원과<br>
+            <strong>회복 가능성 연결</strong>
+          </div>
+        </div>
+        <div class="deck-3col-arrow">→</div>
+        <div class="deck-3col-col org">
+          <div class="deck-3col-label">연결되는 조직</div>
+          <div class="deck-3col-content">
+            <strong>재기지원단</strong>
+            <span class="sub">다시 시작을 준비하는<br>기업을 위한 전담 조직</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal"><strong>한 번 흔들렸다고</strong> 끝은 아니다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 19 — SINBO ROLE MAP (2-row 4-stage timeline)
+     ============================================================ -->
+<section class="slide s19" id="slide-19">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">한 회사를 따라가며 본 신보의 역할 지도</h2>
+
+    <div class="deck-body">
+      <div class="s19-map reveal">
+        <div class="s19-row-label">회사 여정</div>
+        <div class="s19-row company">
+          <div class="s19-cell">
+            <div class="s19-cell-num">01</div>
+            <div class="s19-cell-name">창업지원</div>
+            <span class="s19-cell-sub">출발선의 기회</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-num">02</div>
+            <div class="s19-cell-name">성장지원</div>
+            <span class="s19-cell-sub">자금·신용 연결</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-num">03</div>
+            <div class="s19-cell-name">거래위험 보호</div>
+            <span class="s19-cell-sub">매출채권보험</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-num">04</div>
+            <div class="s19-cell-name">재기지원</div>
+            <span class="s19-cell-sub">위기 후 회복</span>
+          </div>
+        </div>
+        <div class="s19-connector">
+          <div class="s19-connector-cell">↕</div>
+          <div class="s19-connector-cell">↕</div>
+          <div class="s19-connector-cell">↕</div>
+          <div class="s19-connector-cell">↕</div>
+        </div>
+        <div class="s19-row-label">신보 조직</div>
+        <div class="s19-row org">
+          <div class="s19-cell">
+            <div class="s19-cell-name">일반영업점</div>
+            <span class="s19-cell-sub">현장 상담·심사</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-name">일반영업점<br>+ 본점</div>
+            <span class="s19-cell-sub">성장 단계 보증</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-name">신용보험센터</div>
+            <span class="s19-cell-sub">채권 손실 보전</span>
+          </div>
+          <div class="s19-cell">
+            <div class="s19-cell-name">재기지원단</div>
+            <span class="s19-cell-sub">재도전 경로 연결</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">신보는 한 회사를 <strong>키우고</strong>, <strong>지키고</strong>, <strong>다시 일어서게</strong> 돕는다.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 20 — WHO IS IN SINBO (4-card competency grid)
+     ============================================================ -->
+<section class="slide s20" id="slide-20">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">신보 안에는 어떤 사람들이 있을까?</h2>
+
+    <div class="deck-body">
+      <div class="s20-grid reveal">
+        <div class="s20-card">
+          <div class="s20-card-icon">👂</div>
+          <div class="s20-card-body">
+            <div class="s20-card-title">잘 듣는 사람</div>
+            <div class="s20-card-desc">기업의 상황을 먼저<br>이해하려는 태도</div>
+          </div>
+        </div>
+        <div class="s20-card">
+          <div class="s20-card-icon">💬</div>
+          <div class="s20-card-body">
+            <div class="s20-card-title">쉽게 설명하는 사람</div>
+            <div class="s20-card-desc">어려운 금융을<br>현실 언어로 전달하는 힘</div>
+          </div>
+        </div>
+        <div class="s20-card">
+          <div class="s20-card-icon">📊</div>
+          <div class="s20-card-body">
+            <div class="s20-card-title">사람과 숫자를 함께 보는 사람</div>
+            <div class="s20-card-desc">데이터와 현장을<br>함께 읽는 균형 감각</div>
+          </div>
+        </div>
+        <div class="s20-card">
+          <div class="s20-card-icon">🤝</div>
+          <div class="s20-card-body">
+            <div class="s20-card-title">끝까지 책임지는 사람</div>
+            <div class="s20-card-desc">보증을 내주고<br>그 결과까지 함께 보는 자세</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">역할은 달라도, 결국 <strong>사람과 문제를 이해하는 힘</strong>이 중요하다.</p>
   </div>
 </section>
 
