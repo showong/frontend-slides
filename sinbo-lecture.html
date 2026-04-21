@@ -156,89 +156,169 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 }
 
 /* ============================================================
-   SLIDE 9 — CLOSING
+   SLIDE 8 — WHY CREDIT MATTERS (scale/balance infographic)
    ============================================================ */
-.s9 { background:var(--bg-deep); }
+.s8 { background:var(--bg-light); color:var(--text-dark); }
 
-.s9-quote {
-  font-size:clamp(0.82rem,1.7vw,1.1rem); color:var(--light);
-  line-height:1.85; max-width:72ch; margin-bottom:var(--gap);
+.s8-layout {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(1.5rem,4vw,3rem); align-items:start;
 }
-.s9-quote strong { color:var(--coral); }
+@media(max-width:720px){ .s8-layout{ grid-template-columns:1fr; } }
 
-.s9-divider { width:2.5rem; height:2px; background:var(--divider); margin-bottom:var(--gap); }
+.s8-concept {
+  background:var(--bg-soft); border:1.5px solid var(--line-light);
+  border-radius:12px; padding:clamp(1rem,2.2vw,1.5rem);
+  display:flex; flex-direction:column; gap:0.55rem;
+}
+.s8-concept-label {
+  font-size:clamp(0.72rem,1vw,0.82rem);
+  color:var(--text-muted); font-weight:700;
+  letter-spacing:0.12em; text-transform:uppercase;
+}
+.s8-concept-text {
+  font-size:clamp(0.98rem,1.65vw,1.2rem);
+  color:var(--deep-navy); font-weight:700; line-height:1.5;
+}
 
-.s9-q-label {
-  font-size:var(--small-size); color:var(--muted);
-  font-weight:700; letter-spacing:0.1em; margin-bottom:var(--egap);
+/* Scale / balance infographic */
+.s8-scale {
+  display:flex; align-items:flex-end; justify-content:center;
+  gap:clamp(0.6rem,1.4vw,1rem);
+  margin-top:clamp(1.2rem,3vw,2.2rem);
 }
-.s9-options {
-  display:grid; grid-template-columns:repeat(2,1fr);
-  gap:clamp(0.54rem,1vw,0.7rem);
+.s8-pan {
+  flex:1; background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:10px;
+  padding:clamp(0.75rem,1.6vw,1.1rem);
+  display:flex; flex-direction:column; gap:0.4rem;
 }
-@media(max-width:500px){ .s9-options{ grid-template-columns:1fr; } }
-
-.s9-opt {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:8px; padding:clamp(0.69rem,1.4vw,0.9rem) clamp(0.85rem,2vw,1.15rem);
-  font-size:clamp(0.82rem,1.3vw,0.88rem); color:var(--light);
-  display:flex; align-items:center; gap:0.55em;
-  cursor:pointer; transition:all 0.25s ease; user-select:none;
+.s8-pan-label {
+  font-size:clamp(0.68rem,1vw,0.78rem);
+  color:var(--text-muted); font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  margin-bottom:0.2rem;
 }
-.s9-opt:hover { border-color:var(--coral); color:var(--white); background:rgba(255,107,53,0.06); }
-.s9-opt-icon { font-size:1.15em; flex-shrink:0; }
-
-.s9-brand {
-  display:flex; align-items:center; gap:0.6rem;
-  margin-top:var(--gap); padding-top:var(--egap);
-  border-top:1px solid var(--divider);
-  font-size:var(--small-size); color:var(--muted);
+.s8-pan-tags {
+  display:flex; flex-wrap:wrap; gap:0.35rem;
 }
-.s9-brand-accent { color:var(--coral); font-weight:700; }
+.s8-pan-tag {
+  font-size:clamp(0.72rem,1.1vw,0.85rem);
+  color:var(--accent-blue); font-weight:600;
+  background:rgba(43,108,176,0.08);
+  border:1px solid rgba(43,108,176,0.22);
+  border-radius:4px; padding:0.2em 0.65em;
+}
+.s8-pan-result {
+  font-size:clamp(0.88rem,1.4vw,1.05rem);
+  color:var(--accent-green); font-weight:700;
+  line-height:1.45;
+}
+.s8-balance-icon {
+  font-size:clamp(1.4rem,2.8vw,2.2rem);
+  flex-shrink:0; align-self:center;
+  margin-bottom:0.3rem;
+}
 
 /* ============================================================
-   SLIDE 8 — IF I WERE AN INTERVIEWER
+   SLIDE 9 — WHAT IS POLICY FINANCE (umbrella infographic)
    ============================================================ */
-.s8 { background:var(--bg-navy); }
+.s9 { background:var(--bg-light); color:var(--text-dark); }
 
-.s8-grid {
+.s9-body {
+  display:grid; grid-template-columns:1.1fr 1fr;
+  gap:clamp(1.5rem,4vw,3rem); align-items:center;
+}
+@media(max-width:720px){ .s9-body{ grid-template-columns:1fr; } }
+
+/* Left: 3 lines */
+.s9-lines { display:flex; flex-direction:column; gap:clamp(0.75rem,1.8vw,1.25rem); }
+.s9-line {
+  font-size:clamp(0.98rem,1.6vw,1.18rem);
+  color:var(--text-dark); font-weight:500; line-height:1.55;
+  padding-left:clamp(0.75rem,1.5vw,1.1rem);
+  border-left:3px solid var(--line-light);
+}
+.s9-line.accent {
+  color:var(--accent-green); font-weight:700;
+  border-color:var(--accent-green);
+}
+.s9-line strong { color:var(--deep-navy); font-weight:700; }
+
+/* Right: umbrella infographic */
+.s9-umbrella { display:flex; flex-direction:column; align-items:center; gap:0; }
+.s9-canopy {
+  background:var(--deep-navy); color:#fff;
+  border-radius:50px 50px 0 0;
+  padding:clamp(0.65rem,1.4vw,0.95rem) clamp(1.5rem,4vw,3rem);
+  font-size:clamp(0.88rem,1.4vw,1.05rem);
+  font-weight:700; text-align:center;
+  width:100%;
+}
+.s9-stem {
+  width:2px; height:clamp(0.9rem,1.8vw,1.4rem);
+  background:var(--deep-navy);
+}
+.s9-under {
   display:grid; grid-template-columns:repeat(2,1fr);
-  grid-template-rows:repeat(2,1fr);
-  gap:clamp(0.59rem,1.2vw,0.85rem);
+  gap:clamp(0.4rem,0.9vw,0.6rem);
+  width:100%;
 }
-@media(max-width:600px){ .s8-grid{ grid-template-columns:1fr; grid-template-rows:auto; } }
-
-.s8-card {
-  background:var(--bg-card); border:1px solid var(--divider);
-  border-radius:12px; padding:clamp(0.84rem,1.8vw,1.2rem);
-  display:flex; flex-direction:column; gap:0.45em;
-}
-.s8-header { display:flex; align-items:center; gap:0.55em; }
-.s8-num {
-  font-family:var(--fd); font-weight:700; font-size:clamp(1.2rem,2.5vw,1.8rem);
-  color:var(--coral); opacity:0.55; line-height:1; flex-shrink:0;
-}
-.s8-title { font-size:clamp(0.82rem,1.6vw,1.05rem); font-weight:700; color:var(--white); }
-.s8-quote {
-  font-size:clamp(0.77rem,1.15vw,0.83rem); color:var(--muted);
-  font-style:italic; line-height:1.55;
-}
-.s8-pills { display:flex; flex-wrap:wrap; gap:0.3em; margin-top:auto; padding-top:0.2em; }
-.s8-pill {
-  background:rgba(78,205,196,0.1); border:1px solid rgba(78,205,196,0.2);
-  color:var(--teal); font-size:clamp(0.72rem,1vw,0.73rem);
-  padding:0.2em 0.65em; border-radius:2rem;
+.s9-under-item {
+  background:var(--bg-soft);
+  border:1.5px solid var(--line-light);
+  border-radius:8px;
+  padding:clamp(0.55rem,1.2vw,0.85rem);
+  font-size:clamp(0.78rem,1.2vw,0.92rem);
+  color:var(--deep-navy); font-weight:600;
+  text-align:center;
 }
 
-.s8-ncs {
-  grid-column:1/-1; background:rgba(255,209,102,0.07);
-  border:1px solid rgba(255,209,102,0.2); border-radius:8px;
-  padding:clamp(0.64rem,1.3vw,0.85rem) clamp(0.85rem,2vw,1.2rem);
-  font-size:clamp(0.77rem,1.2vw,0.83rem); color:var(--gold);
-  text-align:center; line-height:1.6;
+/* ============================================================
+   SLIDE 10 — WHY POLICY FINANCE (3-step vertical logic flow)
+   ============================================================ */
+.s10 { background:var(--bg-light); color:var(--text-dark); }
+.s10 .slide-content { justify-content:center; }
+
+.s10-flow {
+  display:flex; flex-direction:column;
+  align-items:center; gap:0;
+  max-width:min(38rem,88vw); margin:0 auto;
 }
-.s8-ncs strong { color:var(--white); }
-@media(max-width:600px){ .s8-ncs{ grid-column:1; } }
+.s10-step {
+  width:100%;
+  background:var(--bg-soft); border:1.5px solid var(--line-light);
+  border-radius:12px;
+  padding:clamp(0.9rem,2vw,1.35rem) clamp(1.2rem,2.8vw,2rem);
+  text-align:center;
+}
+.s10-step-num {
+  font-size:clamp(0.68rem,1vw,0.8rem);
+  color:var(--text-muted); font-weight:700;
+  letter-spacing:0.14em; text-transform:uppercase;
+  margin-bottom:0.4em;
+}
+.s10-step-text {
+  font-size:clamp(0.98rem,1.65vw,1.2rem);
+  color:var(--deep-navy); font-weight:700; line-height:1.45;
+}
+.s10-step.barrier {
+  border-color:rgba(43,108,176,0.3);
+  background:rgba(43,108,176,0.06);
+}
+.s10-step.barrier .s10-step-text { color:var(--accent-blue); }
+.s10-step.solution {
+  border-color:var(--accent-green);
+  background:rgba(47,133,90,0.08);
+}
+.s10-step.solution .s10-step-text { color:var(--accent-green); }
+.s10-arrow {
+  font-size:clamp(1rem,1.8vw,1.4rem);
+  color:var(--text-muted);
+  padding:clamp(0.2rem,0.5vw,0.4rem) 0;
+  flex-shrink:0;
+}
 
 /* ============================================================
    SLIDE 5 — WHAT IS FINANCE (centered, bidirectional connection)
@@ -950,125 +1030,111 @@ body { font-family:var(--fb); background:var(--bg-deep); color:var(--white); fon
 </section>
 
 <!-- ============================================================
-     SLIDE 8 — IF I WERE AN INTERVIEWER
+     SLIDE 8 — WHY CREDIT MATTERS (scale infographic)
      ============================================================ -->
 <section class="slide s8" id="slide-8">
-  <div class="bg-grid"></div>
-  <div class="glow glow-coral" style="width:36vw;height:36vw;top:-8%;right:-5%;opacity:0.5;"></div>
-
   <div class="slide-content">
-    <div class="section-label reveal">Part 4 · 채용과 태도</div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
-      내가 면접관이라면 보고 싶은 사람
-    </h2>
+    <h2 class="deck-title reveal">금융에서 신용은 왜 중요할까?</h2>
 
-    <div class="s8-grid">
-      <div class="s8-card reveal">
-        <div class="s8-header">
-          <div class="s8-num">01</div>
-          <div class="s8-title">어려운 걸 쉽게 설명하는 사람</div>
+    <div class="deck-body">
+      <div class="s8-layout">
+        <!-- 왼쪽: 개념 카드 -->
+        <div class="s8-concept reveal">
+          <div class="s8-concept-label">금융의 시각</div>
+          <div class="s8-concept-text">"갚을 수 있는가"를<br>어떻게 판단할까?</div>
         </div>
-        <div class="s8-quote">"아는 사람보다, 상대가 이해하게 만드는 사람이 강합니다."</div>
-        <div class="s8-pills">
-          <span class="s8-pill">결론 먼저</span>
-          <span class="s8-pill">친구에게 설명</span>
-          <span class="s8-pill">자기 말로</span>
+        <!-- 오른쪽: 개념 카드 -->
+        <div class="s8-concept reveal">
+          <div class="s8-concept-label">신용의 본질</div>
+          <div class="s8-concept-text">신용은 감정이 아니라<br>기록과 신뢰의 문제다</div>
         </div>
       </div>
 
-      <div class="s8-card reveal">
-        <div class="s8-header">
-          <div class="s8-num">02</div>
-          <div class="s8-title">모르는 걸 숨기지 않고 배우는 사람</div>
+      <!-- 저울형 인포그래픽 -->
+      <div class="s8-scale reveal" aria-hidden="true">
+        <div class="s8-pan">
+          <div class="s8-pan-label">판단 재료</div>
+          <div class="s8-pan-tags">
+            <span class="s8-pan-tag">기록</span>
+            <span class="s8-pan-tag">소득</span>
+            <span class="s8-pan-tag">상환능력</span>
+            <span class="s8-pan-tag">정보</span>
+          </div>
         </div>
-        <div class="s8-quote">"처음부터 다 아는 사람보다, 빨리 배우는 사람이 더 믿음직합니다."</div>
-        <div class="s8-pills">
-          <span class="s8-pill">질문하기</span>
-          <span class="s8-pill">틀린 뒤 고치기</span>
-          <span class="s8-pill">피드백 받기</span>
+        <div class="s8-balance-icon">⚖️</div>
+        <div class="s8-pan">
+          <div class="s8-pan-label">결과</div>
+          <div class="s8-pan-result">금융 접근 가능성</div>
         </div>
-      </div>
-
-      <div class="s8-card reveal">
-        <div class="s8-header">
-          <div class="s8-num">03</div>
-          <div class="s8-title">맡은 일을 끝까지 챙기는 사람</div>
-        </div>
-        <div class="s8-quote">"똑똑한 사람은 많지만, 끝까지 책임지는 사람은 생각보다 많지 않습니다."</div>
-        <div class="s8-pills">
-          <span class="s8-pill">조별과제 마무리</span>
-          <span class="s8-pill">시간 약속</span>
-          <span class="s8-pill">작은 일도 끝까지</span>
-        </div>
-      </div>
-
-      <div class="s8-card reveal">
-        <div class="s8-header">
-          <div class="s8-num">04</div>
-          <div class="s8-title">함께 일하고 싶은 사람</div>
-        </div>
-        <div class="s8-quote">"면접에서 결국 남는 건 완벽한 답보다 태도입니다."</div>
-        <div class="s8-pills">
-          <span class="s8-pill">경청</span>
-          <span class="s8-pill">말투</span>
-          <span class="s8-pill">협업</span>
-          <span class="s8-pill">존중</span>
-        </div>
-      </div>
-
-      <div class="s8-ncs reveal">
-        💡 신보 채용은 <strong>NCS 기반</strong>으로 직무능력과 인성을 종합 평가하는 <strong>구조화 면접</strong>을 운영합니다.<br>
-        → "회사는 시험점수만 보는 게 아니라, 실제로 <strong>함께 일할 수 있는 사람</strong>인지를 봅니다."
       </div>
     </div>
+
+    <p class="deck-takeaway reveal">정보가 적으면, <strong>가능성이 있어도 판단이 어려워진다.</strong></p>
   </div>
-  <span class="slide-num">08 / 09</span>
 </section>
 
 <!-- ============================================================
-     SLIDE 9 — CLOSING
+     SLIDE 9 — WHAT IS POLICY FINANCE (umbrella infographic)
      ============================================================ -->
 <section class="slide s9" id="slide-9">
-  <div class="bg-grid"></div>
-  <div class="glow glow-coral" style="width:40vw;height:40vw;bottom:-8%;left:-5%;opacity:0.5;"></div>
-  <div class="glow glow-teal"  style="width:32vw;height:32vw;top:-5%;right:-5%;opacity:0.4;"></div>
-
   <div class="slide-content">
-    <div class="section-label reveal">마무리</div>
-    <h2 style="font-family:var(--fd);font-weight:700;font-size:var(--h2-size);margin-bottom:var(--gap);" class="reveal">
-      가능성을 현실로 만드는 금융, 그리고 사람
-    </h2>
+    <h2 class="deck-title reveal">그렇다면 정책금융은 무엇일까?</h2>
 
-    <p class="s9-quote reveal">
-      "좋은 아이디어가 세상에 나오기 위해서는 시작할 기회가 필요하고,
-      성장하기 위해서는 <strong>자금과 신뢰</strong>가 필요하며,
-      오래 살아남기 위해서는 <strong>위험을 관리할 장치</strong>가 필요합니다.
-      신보는 그 가능성을 현실로 연결하는 역할을 합니다.
-      그리고 그 일을 잘하는 사람은 결국
-      <strong>사람과 숫자를 함께 보고, 책임 있게 문제를 끝까지 다루는 사람</strong>입니다."
-    </p>
+    <div class="deck-body">
+      <div class="s9-body">
+        <!-- 왼쪽: 3줄 정의 -->
+        <div class="s9-lines">
+          <div class="s9-line reveal">민간금융만으로 충분히 지원되기 <strong>어려운 영역</strong></div>
+          <div class="s9-line reveal">국가가 <strong>전략적으로 보완</strong>하는 금융</div>
+          <div class="s9-line accent reveal">신보도 정책금융기관의 한 축</div>
+        </div>
 
-    <div class="s9-divider reveal"></div>
-
-    <div class="reveal">
-      <div class="s9-q-label">마지막 질문 — 오늘 이야기 중 가장 인상 깊었던 것은?</div>
-      <div class="s9-options">
-        <div class="s9-opt"><span class="s9-opt-icon">🌱</span>회사를 키우는 금융</div>
-        <div class="s9-opt"><span class="s9-opt-icon">🛡️</span>거래를 지키는 금융</div>
-        <div class="s9-opt"><span class="s9-opt-icon">🔄</span>다시 일어설 기회를 만드는 금융</div>
-        <div class="s9-opt"><span class="s9-opt-icon">💪</span>오래 가는 사람의 태도</div>
+        <!-- 오른쪽: 우산형 인포그래픽 -->
+        <div class="s9-umbrella reveal" aria-hidden="true">
+          <div class="s9-canopy">🌂 정책금융</div>
+          <div class="s9-stem"></div>
+          <div class="s9-under">
+            <div class="s9-under-item">초기기업</div>
+            <div class="s9-under-item">혁신기업</div>
+            <div class="s9-under-item">위험관리</div>
+            <div class="s9-under-item">성장지원</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="s9-brand reveal">
-      <span class="s9-brand-accent">신용보증기금</span>
-      <span>·</span>
-      <span>금융이지 특강</span>
-      <span>·</span>
-      <span>2026</span>
-    </div>
+    <p class="deck-takeaway reveal">정책금융은 <strong>'시장만으로 부족한 부분'</strong>을 보완한다.</p>
   </div>
-  <span class="slide-num">09 / 09</span>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 — WHY POLICY FINANCE (3-step logic flow)
+     ============================================================ -->
+<section class="slide s10" id="slide-10">
+  <div class="slide-content">
+    <h2 class="deck-title reveal" style="text-align:center;">왜 국가는 어떤 회사의 시작을 도울까?</h2>
+
+    <div class="deck-body">
+      <div class="s10-flow reveal">
+        <div class="s10-step">
+          <div class="s10-step-num">01</div>
+          <div class="s10-step-text">아이디어와 기술</div>
+        </div>
+        <div class="s10-arrow">↓</div>
+        <div class="s10-step barrier">
+          <div class="s10-step-num">02</div>
+          <div class="s10-step-text">하지만 부족한 기록과 신뢰</div>
+        </div>
+        <div class="s10-arrow">↓</div>
+        <div class="s10-step solution">
+          <div class="s10-step-num">03</div>
+          <div class="s10-step-text">정책금융 필요</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="deck-takeaway reveal">부족한 가능성을 만드는 게 아니라,<br><strong>보이지 않던 가능성을 연결하는 것</strong>이다.</p>
+  </div>
 </section>
 
 <script>
